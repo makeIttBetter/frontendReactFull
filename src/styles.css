@@ -1,0 +1,329 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px; /* Limit maximum width */
+    margin: auto;
+    overflow: hidden;
+}
+
+header {
+    background: #fff;
+    color: #fff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #77c9d4 3px solid;
+}
+
+header a {
+    background: #fff;
+    color: #4e4b4b; /* Set text color to black */
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+header ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+header li {
+    margin: 0 15px
+}
+
+header .logo {
+    float: left;
+}
+
+header .logo h1 {
+    color: #4e4b4b; /* Set logo text color to black */
+}
+
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+header .cta {
+    background: #77c9d4;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff; /* Ensure text color is set */
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('hero-image/hero.webp') no-repeat center center/cover;
+    background-size: 95%; /* Adjust the background size to 76% */
+    height: 95vh; /*74*/
+    text-align: center;
+    color: #fff;
+    padding: 20px ; /* Add padding to top and bottom 40px, sides 20px */
+    box-sizing: border-box; /* Ensure padding is included in the height calculation */
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+
+.hero .hero-content {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1; /* Ensure content is above overlay */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 10%; /* Adjust positioning for overlay text */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    text-align: center;
+    width: 100%;
+}
+
+.hero-slogan {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff; /* Ensure text is white */
+}
+
+.btn-learn-more {
+    background-color: rgba(119, 201, 212, 0.8); /* Semi-transparent background */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.hero h2 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.25em;
+    margin-bottom: 20px;
+}
+
+.hero .cta {
+    background: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #4e4b4b;
+}
+
+.features, .about, .contact {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.features h2, .about h2, .contact h2 {
+    margin-bottom: 20px;
+}
+
+.features .feature, .about p, .contact p {
+    margin-bottom: 20px;
+}
+
+.contact form input, .contact form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact form button {
+    background: #77c9d4;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+footer {
+    background: #4e4b4b;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    header nav {
+        flex-direction: column;
+    }
+
+    header ul {
+        flex-direction: column;
+    }
+
+    header li {
+        margin: 10px 0;
+    }
+
+    .hero {
+        padding: 150px 20px 20px;
+        height: auto;
+    }
+
+    .hero h2 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+}
+
+/* Learn more features*/
+.features, .about, .contact, .learn-more, .features-extended, .screenshots, .testimonials, .download {
+    padding: 50px 0;
+}
+
+.features .feature, .features-extended .feature {
+    margin: 20px 0;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact form button:hover {
+    background-color: #5ea4b4;
+}
+
+.cta-button {
+    background: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+#features-extended, #screenshots, #testimonials, #download {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.feature {
+    display: inline-block;
+    width: 30%;
+    padding: 20px;
+}
+
+.feature img {
+    width: 50px;
+    height: 50px;
+}
+
+blockquote {
+    border-left: 5px solid #007BFF;
+    padding-left: 10px;
+    margin: 20px auto;
+    width: 60%;
+}
+
+/*Map*/
+.map-section {
+    padding: 50px 0;
+    background: #f9f9f9;
+}
+
+.input-container {
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.input-container input {
+    padding: 5px;
+    margin-right: 5px;
+}
+
+/* For Scrollable Travel Destinations Section*/
+/* Style for the container */
+.image-container {
+    display: flex;   
+    overflow-x: auto; /* Horizontal overflow scroll */
+    justify-content: space-around;
+    padding: 20px;
+    margin-bottom: 20px;
+    flex-wrap: nowrap;
+    overflow:auto;
+}
+    
+/* Style for each image box*/
+.image-box {
+    width: 30%; /* Adjust width as needed 100%*/
+    margin-right: 20px; /* Space between image boxes */
+    text-align: center;
+    
+    border: 1px solid #ccc; /* Add border */
+    border-radius: 8px; /* Add rounded corners */
+    padding: 10px; /* Add padding */
+}
+
+/* Style for image */
+.image-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    aspect-ratio: 4/3;/* Set the aspect ratio based on th Paris image*/
+}
+
+.description {
+    padding-left: 10px; /* Padding between image and description */
+    font-size: 14px;
+    line-height: 1.5;
+}    
+
+/* Style for description */
+.image-box .description {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+}
