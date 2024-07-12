@@ -4,6 +4,7 @@ import Main from 'components/main/Main';
 import SignPage from 'components/auth/SignPage';
 import { AuthProvider } from 'components/guards/AuthContext';
 import ProtectedRoute from 'components/guards/ProtectedRoute';
+import LandingPage from './components/landing/LandingPage';
 import './index.css';
 
 const App = () => {
@@ -12,6 +13,7 @@ const App = () => {
       <Router>
         <Routes>
           <Route path="/auth" element={<SignPage />} />
+          <Route path="/landing" element={<LandingPage />} />
           <Route
             path="/main"
             element={

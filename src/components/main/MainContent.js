@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from 'assests/logo.png'; // Assurez-vous que le chemin d'accès est correct
+import logo from 'assets/logo.png'; // Assurez-vous que le chemin d'accès est correct
 
 const MainContent = ({ onPromptClick }) => {
   const prompts = [
