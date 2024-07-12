@@ -1,5 +1,5 @@
 import React from "react";
-import { useAuth } from "config/AuthContext";
+import { useAuth } from "components/guards/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 function SignInForm() {
