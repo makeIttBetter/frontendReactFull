@@ -27,6 +27,7 @@ function SignInForm({ styles }) {
       const response = await SignIn(username, password);
       console.log(response)
       if (response.status === 200) {
+        localStorage.setItem('token', token);
         // Simulate sign-in process
         signIn();
         // Navigate to main page upon successful sign-up

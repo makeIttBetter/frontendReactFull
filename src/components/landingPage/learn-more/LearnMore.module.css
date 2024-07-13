@@ -1,0 +1,137 @@
+.container {
+    width: 90%;
+    max-width: 1200px; /* Limit maximum width */
+    margin: auto;
+    overflow: hidden;
+}
+
+.header {
+    background: #fff;
+    color: #fff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #77c9d4 3px solid;
+}
+
+.header a {
+    background: #fff;
+    color: #4e4b4b; /* Set text color to black */
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.header ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.header li {
+    margin: 0 15px
+}
+
+.header .logo {
+    float: left;
+}
+
+.header .logo h1 {
+    color: #4e4b4b; /* Set logo text color to black */
+}
+
+
+.header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.header .cta {
+    background: #77c9d4;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff; /* Ensure text color is set */
+}
+
+.features {
+    padding: 50px 0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.features h2 {
+    margin-bottom: 20px;
+}
+
+.features, .learn-more, .features-extended, .screenshots, .testimonials, .download {
+    padding: 50px 0;
+}
+
+.features .feature, .features-extended .feature {
+    margin: 20px 0;
+}
+
+.footer {
+    background: #4e4b4b;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+.cta-button {
+    background: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+#features-extended, #screenshots, #testimonials, #download {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.feature {
+    display: inline-block;
+    width: 30%;
+    padding: 20px;
+}
+
+.feature img {
+    width: 50px;
+    height: 50px;
+}
+
+.blockquote {
+    border-left: 5px solid #007BFF;
+    padding-left: 10px;
+    margin: 20px auto;
+    width: 60%;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .header nav {
+        flex-direction: column;
+    }
+
+    .header ul {
+        flex-direction: column;
+    }
+
+    .header li {
+        margin: 10px 0;
+    }
+}
+
