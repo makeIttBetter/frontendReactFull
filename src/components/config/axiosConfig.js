@@ -16,7 +16,8 @@ apiClient.interceptors.request.use(
       if (
         !config.url.includes('/auth/signup') && 
         !config.url.includes('/auth/login') &&
-        !config.url.includes('/landing')) {
+        !config.url.includes('/learn-more') &&
+        !config.url.includes('/')){
         config.headers.Authorization = `Bearer ${token}`;
       }
     }

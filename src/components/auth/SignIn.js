@@ -27,6 +27,7 @@ function SignInForm({ styles }) {
       const response = await SignIn(username, password);
       console.log(response)
       if (response.status === 200) {
+        const { token } = response.data;
         localStorage.setItem('token', token);
         // Simulate sign-in process
         signIn();
@@ -39,6 +40,8 @@ function SignInForm({ styles }) {
     } catch (error) {
       console.error('Error during sign-In:', error);
     }
+    signIn();
+    navigate('/main');
   };
 
   return (
