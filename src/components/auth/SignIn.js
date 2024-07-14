@@ -26,22 +26,20 @@ function SignInForm({ styles }) {
     try {
       const response = await SignIn(username, password);
       console.log(response)
-      if (response.status === 200) {
-        const { token } = response.data;
-        localStorage.setItem('token', token);
+      if (response.status === 200 && response.verified == true) {
+        const { token } = response;
         // Simulate sign-in process
-        signIn();
+        signIn(token={token});
         // Navigate to main page upon successful sign-up
         navigate('/main');
       } else {
-        // Handle errors
         console.error('Sign-In failed');
       }
     } catch (error) {
       console.error('Error during sign-In:', error);
     }
-    signIn();
-    navigate('/main');
+    // signIn();
+    // navigate('/main');
   };
 
   return (

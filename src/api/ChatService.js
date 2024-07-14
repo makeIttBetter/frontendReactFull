@@ -1,9 +1,9 @@
-import axios from 'axios';
+import apiClient from 'config/axiosConfig';
 
 const API_URL = '/api/chat/call';
 
 const sendMessage = (message) => {
-  return axios.post(API_URL, { message }, {
+  return apiClient.post(API_URL, { message }, {
     headers: {
       'Content-Type': 'application/json'
     }

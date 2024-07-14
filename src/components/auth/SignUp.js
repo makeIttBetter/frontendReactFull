@@ -26,10 +26,11 @@ function SignUpForm({ styles }) {
     try {
       const response = await signUp(name, email, password);
       if (response.status === 200) {
+        alert('Sign-up successful\nGo Login Now!');
         // Simulate sign-in process
-        signIn();
+        // signIn();
         // Navigate to main page upon successful sign-up
-        navigate('/main');
+        // navigate('/main');
       } else {
         // Handle errors
         console.error('Sign-up failed');

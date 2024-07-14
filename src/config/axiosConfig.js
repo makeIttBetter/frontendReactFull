@@ -1,11 +1,13 @@
 import axios from 'axios';
-import { useNavigate } from "react-router-dom";
+import { createBrowserHistory } from 'history';
 
 // Create an Axios instance
 const apiClient = axios.create({
   baseURL: process.env.REACT_APP_BASE_URL || 'http://localhost:8080',
 });
-const navigate = useNavigate();
+
+// History object for navigation outside of React components
+export const history = createBrowserHistory();
 
 // Request Interceptor
 apiClient.interceptors.request.use(
@@ -17,7 +19,8 @@ apiClient.interceptors.request.use(
         !config.url.includes('/auth/signup') && 
         !config.url.includes('/auth/login') &&
         !config.url.includes('/learn-more') &&
-        !config.url.includes('/')){
+        !config.url.includes('/')
+      ) {
         config.headers.Authorization = `Bearer ${token}`;
       }
     }
@@ -34,7 +37,7 @@ apiClient.interceptors.response.use(
   (error) => {
     // Handle error response
     if (error.response && error.response.status === 401) {
-      navigate('/main');
+      history.push('/main');
       console.error('Unauthorized, redirecting to login...');
     }
     return Promise.reject(error);

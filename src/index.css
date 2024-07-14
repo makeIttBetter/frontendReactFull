@@ -65,3 +65,12 @@
 .original-h3 {
   @apply text-lg font-medium; /* Adjust to match the default styles */
 }
+
+html{
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
+}
