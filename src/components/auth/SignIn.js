@@ -25,9 +25,10 @@ function SignInForm({ styles }) {
     const { username, password } = state;
     try {
       const response = await SignIn(username, password);
-      console.log(response)
-      if (response.status === 200 && response.verified == true) {
-        const { token } = response;
+      // console.log(response)
+      if (response.status === 200) {
+        var token = response.data.token;
+        // console.log(response.data.token)
         // Simulate sign-in process
         signIn(token={token});
         // Navigate to main page upon successful sign-up

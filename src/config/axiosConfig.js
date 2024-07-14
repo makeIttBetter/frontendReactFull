@@ -16,10 +16,8 @@ apiClient.interceptors.request.use(
     if (token) {
       // Add token to headers except for specific endpoints
       if (
-        !config.url.includes('/auth/signup') && 
-        !config.url.includes('/auth/login') &&
-        !config.url.includes('/learn-more') &&
-        !config.url.includes('/')
+        !config.url.includes('/auth') &&
+        !config.url.includes('/land')
       ) {
         config.headers.Authorization = `Bearer ${token}`;
       }
