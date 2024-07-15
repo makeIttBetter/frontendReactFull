@@ -95,7 +95,7 @@
   overflow: hidden;
   width: 768px;
   max-width: 100%;
-  min-height: 480px;
+  min-height: 520px;
 }
 
 .body-sign .form-container {
@@ -248,4 +248,18 @@
 .body-sign footer a {
   color: #3c97bf;
   text-decoration: none;
+}
+
+/* password container and toggle icon */
+.password-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.toggle-icon {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
 }

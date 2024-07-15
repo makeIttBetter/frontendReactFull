@@ -14,6 +14,10 @@ const Header = () => {
     navigate('/', { state: { targetId: to } });
   };
 
+  const handleLogin = () => {
+    navigate('/auth');
+  };
+
   return (
   <header className={styles.header}>
     <div className={styles.container}>
@@ -38,7 +42,7 @@ const Header = () => {
             </a>
           </li>
         </ul>
-        <a href="#" className={styles.cta}>Start Planning</a>
+        <a onClick={() => handleLogin()} className={styles.cta}>Start Planning</a>
       </nav>
     </div>
   </header>);
