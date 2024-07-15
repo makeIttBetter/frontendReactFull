@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AiTripPlanner Chatbot</title>
+    <link rel="stylesheet" href="styles.css">
+    <!--Added lines Https://unpkg...-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <h1>AiTripPlanner</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <a href="#" class="cta">Start Planning</a> <!--Where the # is, my react url should go here-->
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>AiTripPlanner for the perfect trip</h2>
+            <p>Discover and plan your next adventure with our AI-powered trip planner chatbot.</p>
+            <a href="learn-more.html" class="cta">Learn More</a>
+        </div>
+    </section>
+<!--Map section-->
+<section id="map-section" class="map-section">
+    <div class="container">
+        <h2>Interactive Map</h2>
+        <p>Discover popular travel destinations or input your destination to see personalized recommendations.</p>
+        <div id="map" style="height: 500px;"></div>
+    </div>
+</section>
+
+<!--Scrollable Travel Destinations Section-->
+<section id="scrollable-destinations" class="scrollable-destinations">
+    <div class="container">
+        <h2>Popular Travel Destinations</h2>
+        <div class="image-container">
+            <!-- Image box 1: Paris -->
+            <div class="image-box">
+                <img src="Places\paris.jpg" alt="Paris">
+                <div class="description">
+                    <strong>Paris, France</strong><br>
+                    France captivates with its rich cultural tapestry 
+                    and diverse landscapes, from the sun-kissed Riviera 
+                    to the majestic Alps. Paris, the epitome of 
+                    sophistication, beckons with its iconic landmarks 
+                    like the Eiffel Tower and the Louvre Museum, alongside
+                    charming cafes and designer boutiques lining its 
+                    boulevards. Whether exploring historic castles in 
+                    the Loire Valley or savoring gourmet cuisine in Lyon,
+                    each visit promises a new chapter in France's 
+                    timeless allure.
+                </div>
+            </div>
+            
+            <!-- Repeat for other destinations -->
+            <!-- Image box 2: Bora Bora -->
+            <div class="image-box">
+                <img src="Places\borabora.jpg" alt="Bora Bora">
+                <div class="description">
+                    <strong>Bora Bora</strong><br>
+                    Bora Bora, nestled in the heart of French Polynesia, 
+                    is a paradise defined by its crystal-clear waters 
+                    and overwater bungalows perched above thriving coral 
+                    reefs. This idyllic island enchants with its lush 
+                    greenery, secluded beaches, and the iconic Mount
+                    Otemanu towering over turquoise lagoons. Whether
+                    snorkeling amidst vibrant marine life or indulging 
+                    in Polynesian hospitality, Bora Bora offers a serene 
+                    escape where each moment unveils a new facet of its 
+                    tropical splendor.
+                </div>
+            </div>
+
+            <!-- Image box 3: Glacier National Park -->
+            <div class="image-box">
+                <img src="Places\glacier.jpg" alt="Glacier National Park">
+                <div class="description">
+                    <strong>Glacier National Park, USA</strong><br>
+                    Glacier National Park, nestled in the Rocky Mountains 
+                    of Montana, is a pristine wilderness renowned for its 
+                    rugged peaks, shimmering glacial lakes, and sprawling 
+                    valleys adorned with wildflowers. This breathtaking 
+                    landscape captivates with its abundant wildlife, 
+                    including grizzly bears and mountain goats, while its 
+                    network of hiking trails offers unparalleled vistas of 
+                    glaciers and ancient forests. Whether exploring the historic 
+                    Going-to-the-Sun Road or camping under starlit skies, 
+                    Glacier National Park promises an unforgettable journey 
+                    into the heart of nature's majesty.   
+                </div>
+            </div>
+
+            <div class="image-box">
+                <img src="Places\rome.jpg" alt="Rome">
+                <div class="description">
+                    <strong>Rome</strong><br>
+                    Rome, the eternal city, mesmerizes with its millennia-old 
+                    history, where ancient wonders like the Colosseum and the 
+                    Pantheon stand alongside Renaissance masterpieces. The 
+                    cobblestone streets of Trastevere lead to vibrant piazzas 
+                    bustling with trattorias and gelaterias, while Vatican City 
+                    beckons with its spiritual grandeur and Michelangelo's 
+                    Sistine Chapel ceiling. With each visit, Rome unveils layers 
+                    of its cultural richness, blending past and present into a 
+                    timeless mosaic of art, architecture, and la dolce vita.
+                </div>
+            </div>
+
+            <div class="image-box">
+                <img src="Places\swissalps.jpg" alt="Swiss Alps">
+                <div class="description">
+                    <strong>Swiss Alps</strong><br>
+                    The Swiss Alps epitomize natural splendor, boasting snow-capped
+                    peaks, pristine lakes, and picturesque villages tucked into 
+                    verdant valleys. From the iconic Matterhorn to the serene shores 
+                    of Lake Geneva, this alpine wonderland offers exhilarating outdoor 
+                    adventures year-round, from skiing and snowboarding in winter to 
+                    hiking and paragliding in summer. Whether indulging in Swiss 
+                    chocolate in cozy mountain chalets or exploring quaint towns like 
+                    Zermatt and Interlaken, the Swiss Alps promise an unforgettable 
+                    retreat into nature's grandeur.
+                </div>
+            </div>
+            <!-- Repeat for other destinations -->
+            <!-- Add more image boxes for each destination -->
+        </div>
+    </div>
+</section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>We are passionate about making travel planning easy and enjoyable using the power of AI. Our chatbot is designed to assist you at every step of your journey, ensuring you have a memorable experience.</p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Have questions or need support? Reach out to us!</p>
+            <form action="#" method="post">
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit" class="cta">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- New Learn More Section 
+    <section id="learn-more" class="learn-more">
+        <div class="container">
+            <h2>Learn More</h2>
+            <p>Steps 3 and 4: Detailed information about AI Trip Planner.</p>
+            <div class="step">
+                <h3>Step 3: Feature Integration</h3>
+                <p>Our AI Trip Planner seamlessly integrates with various travel and event services to provide you with up-to-date information and personalized recommendations.</p>
+            </div>
+            <div class="step">
+                <h3>Step 4: How It Works</h3>
+                <p>Using advanced AI algorithms, our chatbot understands your preferences and plans your trip accordingly. From suggesting itineraries to providing real-time updates, the AI Trip Planner ensures a smooth and enjoyable travel experience.</p>
+            </div>
+        </div>
+    </section> -->
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 AiTripPlanner. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

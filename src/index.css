@@ -54,4 +54,23 @@
   margin-right: 10px;
 }
 
+.original-h1 {
+  @apply text-2xl font-bold; /* Adjust to match the default styles */
+}
 
+.original-h2 {
+  @apply text-xl font-semibold; /* Adjust to match the default styles */
+}
+
+.original-h3 {
+  @apply text-lg font-medium; /* Adjust to match the default styles */
+}
+
+html{
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
+}

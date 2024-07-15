@@ -3,7 +3,7 @@ import { signUp } from "api/auth";
 import { useAuth } from "components/guards/AuthContext";
 import { useNavigate } from "react-router-dom";
 
-function SignUpForm() {
+function SignUpForm({ styles }) {
   const [state, setState] = React.useState({
     name: "",
     email: "",
@@ -26,10 +26,11 @@ function SignUpForm() {
     try {
       const response = await signUp(name, email, password);
       if (response.status === 200) {
+        alert('Sign-up successful\nGo Login Now!');
         // Simulate sign-in process
-        signIn();
+        // signIn();
         // Navigate to main page upon successful sign-up
-        navigate('/main');
+        // navigate('/main');
       } else {
         // Handle errors
         console.error('Sign-up failed');
@@ -40,17 +41,17 @@ function SignUpForm() {
   };
 
   return (
-    <div className="form-container sign-up-container">
+    <div className={`${styles['form-container']} ${styles['sign-up-container']}`}>
       <form onSubmit={handleOnSubmit}>
         <h1>Create Account</h1>
-        <div className="social-container">
-          <a href="#" className="social">
+        <div className={styles['social-container']}>
+          <a href="#" className={styles.social}>
             <i className="fab fa-facebook-f" />
           </a>
-          <a href="#" className="social">
+          <a href="#" className={styles.social}>
             <i className="fab fa-google-plus-g" />
           </a>
-          <a href="#" className="social">
+          <a href="#" className={styles.social}>
             <i className="fab fa-linkedin-in" />
           </a>
         </div>
@@ -61,6 +62,7 @@ function SignUpForm() {
           value={state.name}
           onChange={handleChange}
           placeholder="Name"
+          className={styles.input}
         />
         <input
           type="email"
@@ -68,6 +70,7 @@ function SignUpForm() {
           value={state.email}
           onChange={handleChange}
           placeholder="Email"
+          className={styles.input}
         />
         <input
           type="password"
@@ -75,11 +78,12 @@ function SignUpForm() {
           value={state.password}
           onChange={handleChange}
           placeholder="Password"
+          className={styles.input}
         />
-        <button>Sign Up</button>
+        <button className={styles.button}>Sign Up</button>
       </form>
     </div>
   );
-}
+};
 
 export default SignUpForm;

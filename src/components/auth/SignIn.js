@@ -1,10 +1,11 @@
 import React from "react";
 import { useAuth } from "components/guards/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { SignIn } from "api/auth";
 
-function SignInForm() {
+function SignInForm({ styles }) {
   const [state, setState] = React.useState({
-    email: "",
+    username: "",
     password: ""
   });
   const navigate = useNavigate();
@@ -18,45 +19,53 @@ function SignInForm() {
     });
   };
 
-  const handleOnSubmit = evt => {
+  const handleOnSubmit = async evt => {
     evt.preventDefault();
 
-    const { email, password } = state;
-    signIn();
-
-    navigate('/main');
-    // alert(`You are login with email: ${email} and password: ${password}`);
-
-    // for (const key in state) {
-    //   setState({
-    //     ...state,
-    //     [key]: ""
-    //   });
-    // }
+    const { username, password } = state;
+    try {
+      const response = await SignIn(username, password);
+      // console.log(response)
+      if (response.status === 200) {
+        var token = response.data.token;
+        // console.log(response.data.token)
+        // Simulate sign-in process
+        signIn(token={token});
+        // Navigate to main page upon successful sign-up
+        navigate('/main');
+      } else {
+        console.error('Sign-In failed');
+      }
+    } catch (error) {
+      console.error('Error during sign-In:', error);
+    }
+    // signIn();
+    // navigate('/main');
   };
 
   return (
-    <div className="form-container sign-in-container">
+    <div className={`${styles['form-container']} ${styles['sign-in-container']}`}>
       <form onSubmit={handleOnSubmit}>
         <h1>Sign in</h1>
-        <div className="social-container">
-          <a href="#" className="social">
+        <div className={styles['social-container']}>
+          <a href="#" className={styles.social}>
             <i className="fab fa-facebook-f" />
           </a>
-          <a href="#" className="social">
+          <a href="#" className={styles.social}>
             <i className="fab fa-google-plus-g" />
           </a>
-          <a href="#" className="social">
+          <a href="#" className={styles.social}>
             <i className="fab fa-linkedin-in" />
           </a>
         </div>
         <span>or use your account</span>
         <input
-          type="email"
-          placeholder="Email"
-          name="email"
-          value={state.email}
+          type="username"
+          placeholder="username"
+          name="username"
+          value={state.username}
           onChange={handleChange}
+          className={styles.input}
         />
         <input
           type="password"
@@ -64,12 +73,13 @@ function SignInForm() {
           placeholder="Password"
           value={state.password}
           onChange={handleChange}
+          className={styles.input}
         />
-        <a href="#">Forgot your password?</a>
-        <button>Sign In</button>
+        <a href="#" className={styles.link}>Forgot your password?</a>
+        <button className={styles.button}>Sign In</button>
       </form>
     </div>
   );
-}
+};
 
 export default SignInForm;

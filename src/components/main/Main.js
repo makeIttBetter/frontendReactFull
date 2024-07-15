@@ -3,7 +3,7 @@ import Sidebar from './Sidebar';
 import MainContent from './MainContent';
 import ChatInput from 'components/chat/ChatInput';
 import ChatService from 'api/ChatService';
-import logo from 'assests/logo.png'; // Importer le logo
+import logo from 'assets/logo.png'; // Importer le logo
 import 'index.css';
 
 function Main() {
