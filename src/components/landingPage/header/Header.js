@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link as ScrollLink } from 'react-scroll';
 import styles from './Header.module.css';
 import { useNavigate } from 'react-router-dom';
 

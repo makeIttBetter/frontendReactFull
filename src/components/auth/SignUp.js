@@ -144,7 +144,7 @@ function SignUpForm({ styles }) {
         {errors.email && <span className={styles.error}>{errors.email}</span>}
         <div className={styles['password-container']}>
           <input
-            type={passwordVisible ? "text" : "password"}
+            type={passwordVisible ? "password" : "text"}
             name="password"
             value={state.password}
             onChange={handleChange}
@@ -152,7 +152,7 @@ function SignUpForm({ styles }) {
             className={`${styles.input} ${styles['password-input']}`}
           />
           <FontAwesomeIcon 
-            icon={passwordVisible ? faEyeSlash : faEye} 
+            icon={passwordVisible ? faEye : faEyeSlash} 
             onClick={togglePasswordVisibility} 
             className={styles['toggle-icon']} 
           />
@@ -160,7 +160,7 @@ function SignUpForm({ styles }) {
         {errors.password && <span className={styles.error}>{errors.password}</span>}
         <div className={styles['password-container']}>
           <input
-            type={passwordVisible ? "text" : "password"}
+            type={passwordVisible ? "password" : "text"}
             name="confirmPassword"
             value={state.confirmPassword}
             onChange={handleChange}
@@ -168,7 +168,7 @@ function SignUpForm({ styles }) {
             className={`${styles.input} ${styles['password-input']}`}
           />
           <FontAwesomeIcon 
-            icon={passwordVisible ? faEyeSlash : faEye} 
+            icon={passwordVisible ? faEye : faEyeSlash} 
             onClick={togglePasswordVisibility} 
             className={styles['toggle-icon']} 
           />

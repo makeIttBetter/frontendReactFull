@@ -1,11 +1,9 @@
 import React, { useEffect } from 'react';
-import Header from '../header/Header';
 import Hero from './hero/Hero';
 import MapSection from './mapSection/MapSection';
 import ScrollableDestination from './scrollableDestination/ScrollableDestination';
 import About from './about/About';
 import Contact from './contact/Contact';
-import Footer from '../footer/Footer';
 import styles from './Landing.module.css';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { scroller } from 'react-scroll';
