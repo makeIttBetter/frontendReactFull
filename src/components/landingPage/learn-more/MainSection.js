@@ -1,10 +1,10 @@
 import React from 'react';
 
 const MainSection = ({ styles }) => (
-  <section id="learn-more">
+  <section id="learn-more" style={{ padding: '50px 0' }}>
     <div className={styles.container}>
-      <h1>Discover Your Next Adventure with AiTripPlanner</h1>
-      <p>Seamlessly plan and organize your trips with AI.</p>
+      <h1 style={{ fontSize: '18px', marginBottom: '10px' }}>Discover Your Next Adventure with AiTripPlanner.</h1>
+      <p style={{ fontSize: '18px', marginBottom: '10px' }}>Seamlessly plan and organize your trips with AI.</p>
     </div>
   </section>
 );

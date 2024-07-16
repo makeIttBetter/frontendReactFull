@@ -22,8 +22,8 @@ const Features = () => (
       <div className={styles.featuresContainer}>
         <div className={styles.feature}>
           <img src={featureIcon1} alt="Feature 1" />
-          <h3>Custom Itineraries</h3>
-          <p>Create personalized travel itineraries based on your preferences.</p>
+          <h3>Instant Assistance</h3>
+          <p>Receive instant help and suggestions during your travels.</p>
         </div>
         <div className={styles.feature}>
           <img src={featureIcon2} alt="Feature 2" />

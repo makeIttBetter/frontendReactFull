@@ -1,9 +1,9 @@
 import React from 'react';
 
 const Testimonials = () => (
-  <section id="testimonials" style={{ backgroundColor: '#f0f0f0', paddingTop: '120px', paddingBottom: '80px'}}>
+  <section id="testimonials" style={{ backgroundColor: '#f0f0f0', paddingTop: '80px', paddingBottom: '80px'}}>
     <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-      <h2 style={{ textAlign: 'center', marginBottom: '30px' }}>What Our Users Say</h2>
+      <h2 style={{ textAlign: 'center', marginBottom: '120px', fontSize: '42px'}}>What Our Users Say</h2>
       <div style={styles.container}>
         <div style={styles.leftBox}>
           <div style={styles.blockquote}>

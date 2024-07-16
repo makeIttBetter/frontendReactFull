@@ -55,7 +55,7 @@
     background-color: rgba(119, 201, 212, 0.8); /* Semi-transparent background */
     color: #fff;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 8px;
     text-decoration: none;
     text-transform: uppercase;
 }
@@ -73,7 +73,7 @@
 .hero .cta {
     background: #ffffff;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 8px;
     text-transform: uppercase;
     text-decoration: none;
     color: #4e4b4b;

@@ -17,8 +17,13 @@
 
 .map {
     height: 500px;
+    border-radius: 8px;
   }
 
-.map-section h2 {
-    
+  .map-section h2 {
+    font-size: 42px; /* Adjust the font size for the heading */
+}
+
+.map-section p {
+    font-size: 24px; /* Adjust the font size for the paragraph */
 }

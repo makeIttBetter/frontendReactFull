@@ -16,7 +16,7 @@
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 8px;
 }
 
 .contact form button {
@@ -24,10 +24,10 @@
     color: #fff;
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
 }
 
 .contact form button:hover {
-    background-color: #5ea4b4;
+    background-color: #77c9d4;
 }
