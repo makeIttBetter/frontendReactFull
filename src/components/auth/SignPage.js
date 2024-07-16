@@ -8,7 +8,6 @@ function SignPage() {
   const handleOnClick = text => {
     if (text !== type) {
       setType(text);
-      return;
     }
   };
   const containerClass = `${styles.container} ${

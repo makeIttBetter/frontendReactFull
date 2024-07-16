@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Header.module.css';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const navigate = useNavigate();
@@ -11,10 +12,6 @@ const Header = () => {
 
   const handleLandingNavigation = (to) => {
     navigate('/', { state: { targetId: to } });
-  };
-
-  const handleLogin = () => {
-    navigate('/auth');
   };
 
   return (
@@ -41,10 +38,14 @@ const Header = () => {
             </a>
           </li>
         </ul>
-        <a onClick={() => handleLogin()} className={styles.cta}>Start Planning</a>
+        <div className={styles.buttonContainer}>
+            <Link to="/auth" className={styles.cta}>Log In</Link> {/* Updated to use Link */}
+            <a href="#" className={styles.cta}>Start Planning</a>
+        </div>
       </nav>
     </div>
   </header>);
 };
 
 export default Header;
+
