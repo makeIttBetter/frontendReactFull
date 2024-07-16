@@ -9,6 +9,12 @@
     color: #fff;
     padding: 20px ; /* Add padding to top and bottom 40px, sides 20px */
     box-sizing: border-box; /* Ensure padding is included in the height calculation */
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out; /* Smooth transition for the transform and filter */
+}
+
+.hero:hover {
+    transform: scale(1.05); /* Slightly enlarge the background image */
+    filter: brightness(1.1); /* Make the background image slightly brighter */
 }
 
 .hero-content {
