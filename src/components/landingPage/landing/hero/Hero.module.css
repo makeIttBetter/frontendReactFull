@@ -3,8 +3,8 @@
     justify-content: center;
     align-items: center;
     background: url('assets/hero-image/hero.webp') no-repeat center center/cover;
-    background-size: 95%; /* Adjust the background size to 76% */
-    height: 95vh; /*74*/
+    background-size: 85%; /* Adjust the background size to 76% */
+    height: 85vh; /*74*/
     text-align: center;
     color: #fff;
     padding: 20px ; /* Add padding to top and bottom 40px, sides 20px */

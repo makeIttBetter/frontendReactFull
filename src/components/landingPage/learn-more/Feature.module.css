@@ -1,0 +1,50 @@
+/* Features.module.css */
+
+.features-extended {
+    padding: 20px;
+    background-color: #ffffff;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: row; /* Align items in a column */
+    align-items: center; /* Center items horizontally */
+    padding: 20px;
+  }
+
+  /* Center the title and set the font size */
+  .container h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 0; /* Remove default margin */
+  }
+  
+  .feature {
+    width: 30%; /* Adjust width as needed */
+    margin-bottom: 20px;
+    margin-right: 20px; /* Space between image boxes */
+    text-align: center;
+    border: 1px solid #000000 (0, 0%, 100%); /* Add border */
+    border-radius: 8px; /* Add rounded corners */
+    padding: 10px; /* Add padding */
+  }
+  
+  .feature img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    aspect-ratio: 4/3; /* Set the aspect ratio based on your images */
+  }
+  
+  .feature h3 {
+    margin-top: 10px;
+    font-size: 14px;
+    font-size: 1.4;
+  }
+  
+  .feature p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  

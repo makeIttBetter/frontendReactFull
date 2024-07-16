@@ -1,3 +1,5 @@
+// Features.js
+
 import React from 'react';
 import featureIcon1 from 'assets/places/borabora.jpg';
 import featureIcon2 from 'assets/places/borabora.jpg';
@@ -5,11 +7,12 @@ import featureIcon3 from 'assets/places/borabora.jpg';
 import featureIcon4 from 'assets/places/borabora.jpg';
 import featureIcon5 from 'assets/places/borabora.jpg';
 import featureIcon6 from 'assets/places/borabora.jpg';
+import styles from './Feature.module.css'; // Ensure correct import path
 
-const Features = ({ styles }) => (
+const Features = () => (
   <section id={styles['features-extended']}>
     <div className={styles.container}>
-      <h2>Enhance Your Travel Experience  </h2>
+      <h2>Enhance Your Travel Experience!</h2>
       <div className={styles.feature}>
         <img src={featureIcon1} alt="Feature 1" />
         <h3>Custom Itineraries</h3>
@@ -45,3 +48,5 @@ const Features = ({ styles }) => (
 );
 
 export default Features;
+
+

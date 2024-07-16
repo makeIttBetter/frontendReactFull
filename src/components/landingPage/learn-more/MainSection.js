@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Main = ({ styles }) => (
+const MainSection = ({ styles }) => (
   <section id="learn-more">
     <div className={styles.container}>
       <h1>Discover Your Next Adventure with AiTripPlanner</h1>
@@ -9,4 +9,4 @@ const Main = ({ styles }) => (
   </section>
 );
 
-export default Main;
+export default MainSection;

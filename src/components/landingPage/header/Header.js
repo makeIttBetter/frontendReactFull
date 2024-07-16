@@ -24,11 +24,6 @@ const Header = () => {
         </div>
         <ul className={styles.navLinks}>
           <li>
-            <a onClick={() => handleLearnMoreNavigation('features')} className={styles.linkButton}>
-              Features
-            </a>
-          </li>
-          <li>
             <a onClick={() => handleLandingNavigation('about')} className={styles.linkButton}>
               About
             </a>

@@ -1,17 +1,74 @@
 import React from 'react';
 
-const Testimonials = ({ styles }) => (
-  <section id="testimonials">
-    <div className={styles.container}>
-      <h2>What Our Users Say</h2>
-      <blockquote className={styles.blockquote}>
-        <p>"The AiTripPlanner made my vacation planning effortless!" - Sarah L.</p>
-      </blockquote>
-      <blockquote className={styles.blockquote}>
-        <p>"I love how it integrates with my calendar and maps." - John D.</p>
-      </blockquote>
+const Testimonials = () => (
+  <section id="testimonials" style={{ backgroundColor: '#f0f0f0', paddingTop: '60px', paddingBottom: '60px'}}>
+    <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+      <h2 style={{ textAlign: 'center', marginBottom: '30px' }}>What Our Users Say</h2>
+      <div style={styles.container}>
+        <div style={styles.leftBox}>
+          <div style={styles.blockquote}>
+            <p style={styles.p}>"The AI TripPlanner is incredibly intuitive and saved me hours of research time!"</p>
+          </div>
+        </div>
+        <div style={styles.rightBox}>
+          <div style={styles.blockquote}>
+            <p style={styles.p}>"I'm amazed by how accurately it suggests activities based on my preferences."</p>
+          </div>
+        </div>
+        <div style={styles.centerBox}>
+          <div style={styles.blockquote}>
+            <p style={styles.p}>"Planning trips has never been easier! The personalized recommendations are spot on."</p>
+          </div>
+        </div>
+        <div style={styles.rightBox}>
+          <div style={styles.blockquote}>
+            <p style={styles.p}>"The integration with my favorite apps makes it seamless to organize my trips."</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 );
+
+const styles = {
+  container: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    position: 'relative',
+  },
+  blockquote: {
+    backgroundColor: '#ffffff',
+    padding: '20px',
+    borderRadius: '10px',
+    boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
+    textAlign: 'center',
+  },
+  p: {
+    fontSize: '24px',
+    fontStyle: 'italic',
+    margin: '0',
+  },
+  leftBox: {
+    position: 'absolute',
+    top: '0',
+    left: '0',
+    width: '35%',
+    transform: 'translateY(-50%) rotate(-10deg)',
+    zIndex: '1',
+  },
+  rightBox: {
+    position: 'absolute',
+    top: '0',
+    right: '0',
+    width: '35%',
+    transform: 'translateY(-50%) rotate(10deg)',
+    zIndex: '1',
+  },
+  centerBox: {
+    margin: '0 auto',
+    width: '35%',
+    zIndex: '2',
+  },
+};
 
 export default Testimonials;
