@@ -8,7 +8,6 @@ import featureIcon2 from 'assets/places/borabora.jpg';
 import featureIcon3 from 'assets/places/borabora.jpg';
 import featureIcon4 from 'assets/places/borabora.jpg';
 import featureIcon5 from 'assets/places/borabora.jpg';
-import featureIcon6 from 'assets/places/borabora.jpg';
 import styles from './Feature.module.css'; // Ensure correct import path
 
 const Features = () => (
@@ -51,9 +50,3 @@ const Features = () => (
 );
 
 export default Features;
-
-        {/*<div className={styles.feature}>
-          <img src={featureIcon6} alt="Feature 6" />
-          <h3>Real-Time Assistance</h3>
-          <p>Receive real-time help and suggestions during your travels.</p>
-        </div>*/}
