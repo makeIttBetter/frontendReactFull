@@ -31,7 +31,13 @@ const Download = ({ styles }) => (
           fontSize: '18px',
           borderRadius: '8px',
           border: 'none', /* Remove border */
-        }}>Download Now</a>
+          transition: 'background 0.3s ease', /* Add transition for smooth hover effect */
+          ':hover': { backgroundColor: '#5ca8b9' } // Inline hover style
+        }}
+        onMouseOver={(e) => { e.target.style.backgroundColor = '#5ca8b9'; }}
+        onMouseOut={(e) => { e.target.style.backgroundColor = '#77c9d4'; }}>
+          Download Now
+        </a>
       </div>
     </div>
   </section>

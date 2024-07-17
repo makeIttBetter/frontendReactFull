@@ -78,7 +78,12 @@
     text-decoration: none;
     color: #4e4b4b;
     font-weight: bold;
+  transition: background-color 0.3s ease-in-out; /* Add transition for smooth hover */
 }
+
+.hero .cta:hover {
+    background-color: #dbdbdb; /* New background color on hover */
+  }
 
 @media (max-width: 768px) {
     .hero {

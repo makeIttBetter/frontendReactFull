@@ -135,3 +135,17 @@
     }
 }
 
+.LearnMore {
+    width: 100%;
+    background-color: #f6f6f6;
+    margin: 0;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+}  
+
+/* Add margin or padding to separate components */
+.LearnMore > * {
+    margin-bottom: 100px; /* Adjust spacing as needed */
+  }

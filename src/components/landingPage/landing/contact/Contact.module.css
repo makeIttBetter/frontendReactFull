@@ -28,6 +28,7 @@
     cursor: pointer;
 }
 
-.contact form button:hover {
-    background-color: #77c9d4;
-}
+.contact form button:hover { /* Add hover effect */
+    background-color: #5ca8b9; /* New background color on hover */
+    transition: background-color 0.3s ease; /* Add transition for smooth effect */
+  }
