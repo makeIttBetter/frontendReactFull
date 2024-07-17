@@ -1,6 +1,6 @@
 .map-section {
     padding: 50px 10vw;
-    background: #f0f0f0;
+    background: #f6f6f6;
 }
 
 .input-container {
@@ -22,6 +22,7 @@
 
   .map-section h2 {
     font-size: 42px; /* Adjust the font size for the heading */
+    margin-bottom: 20px;
 }
 
 .map-section p {

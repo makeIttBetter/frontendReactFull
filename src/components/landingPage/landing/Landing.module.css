@@ -3,8 +3,8 @@
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     overflow: hidden;
+    background-color: #f6f6f6;/* General styles for the LandingPage */
 }
-
 .container {
     width: 90%;
     max-width: 1200px;

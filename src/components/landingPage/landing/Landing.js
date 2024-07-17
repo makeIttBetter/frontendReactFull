@@ -29,7 +29,6 @@ const Landing = () => {
   return (<div className={styles.Landing}>
     <Hero navigate={navigate} />
     <Features styles={styles} />
-    <Screenshot styles={styles} />
     <MainSection styles={styles} />
     <MapSection />
     <ScrollableDestination styles={styles} />

@@ -1,79 +1,49 @@
-.features-extended {
+.image-container {
+  display: flex;   
+  overflow-x: auto; /* Horizontal overflow scroll */
+  justify-content: space-around;
   padding: 20px;
-  background-color: #fcf9d0;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  flex-wrap: nowrap;
+  overflow:auto;
 }
 
-.container {
-  display: flex;
-  flex-direction: column; /* Align items in a column */
-  align-items: center; /* Center items horizontally */
-  padding: 20px;
-}
-
-/* Center the title and set the font size */
-.container h2 {
+.image-box {
+  width: 30%; /* Adjust width as needed 100% */
+  margin-right: 20px; /* Space between image boxes */
   text-align: center;
-  font-size: 42px;
-  margin-top: 0; /* Remove default margin */
-  position: relative;
-  overflow: hidden;
-}
-
-.featuresAnimation {
-  display: inline-block;
-  white-space: nowrap;
-  animation: moveText 10s linear infinite;
-}
-
-@keyframes moveText {
-  0% {
-    transform: translateX(100%);
-    color: red; /* Change color as needed */
-  }
-  25% {
-    transform: translateX(0%);
-    color: blue; /* Change color as needed */
-  }
-  75% {
-    transform: translateX(-100%);
-    color: green; /* Change color as needed */
-  }
-  100% {
-    transform: translateX(-200%);
-    color: red; /* Change color as needed */
-  }
-}
-
-.featuresContainer {
-  display: flex;
-  justify-content: flex-start; /* Align items to the start */
-  flex-wrap: nowrap; /* Prevent wrapping to keep items in a single line */
-  width: 70%; /* Full width of the container */
-  gap: 10px; /* Space between boxes */
-}
-
-.feature {
-  width: 20%; /* Smaller width */
-  margin: 5px; /* Reduce space between boxes */
-  text-align: center;
-  border: 1px solid #000000; /* Add border */
+  border: 1px solid #ccc; /* Add border */
   border-radius: 8px; /* Add rounded corners */
-  padding: 5px; /* Reduce padding */
+  padding: 10px; /* Add padding */
 }
 
-.feature img {
+.image-box img {
   width: 100%;
   height: auto;
   border-radius: 8px;
-  aspect-ratio: 3/4; /* Set the aspect ratio based on your images */
+  aspect-ratio: 3/4; /* Set the aspect ratio based on the Paris image */
 }
 
-.feature h3 {
-  margin-top: 5px; /* Reduce margin top */
-  font-size: 18px; /* Smaller font size */
+.description {
+  padding-left: 10px; /* Padding between image and description */
+  font-size: 24px;
+  line-height: 1.5;
 }
 
-.feature p {
-  font-size: 14px; /* Smaller font size */
-  line-height: 1.2; /* Adjust line height */
+.image-box .description {
+  margin-top: 10px;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.scrollable-destination {
+  padding: 0 5vw;
+}
+
+.scrollable-destination h2 {
+  padding-left: 20px;
+  font-size: 42px;
+  padding-top: 60px;
+  width: 100%;
 }

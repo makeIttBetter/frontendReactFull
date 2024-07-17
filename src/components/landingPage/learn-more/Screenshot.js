@@ -4,7 +4,7 @@ import screenshot1 from 'assets/places/rome.jpg';
 const Screenshot = ({ styles }) => (
   <section id="screenshots">
     <div className={styles.container} style={{ position: 'relative' }}>
-      <div style={{ position: 'relative', width: '100%', paddingTop: '42%', overflow: 'hidden', borderRadius: '8px' }}>
+      <div style={{ position: 'relative', width: '100%', paddingTop: '56.25%', overflow: 'hidden', borderRadius: '8px' }}>
         <img
           src={screenshot1}
           alt="AiTripPlanner Video"
@@ -13,7 +13,7 @@ const Screenshot = ({ styles }) => (
             top: '0',
             left: '0',
             width: '100%',
-            maxHeight:'500px',
+            maxHeight:'100%',
             aspectRatio:'16/9',
             height: '100%',
             objectFit: 'cover',

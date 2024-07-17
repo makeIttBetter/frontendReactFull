@@ -90,8 +90,10 @@ const MapSection = () => {
   return (
     <section id="map-section" className={`${styles['map-section']} ${styles['flex-container']}`}>
       <div className={styles.container}>
-        <h2 className="original-h2">Interactive Map</h2>
-        <p>Discover popular travel destinations or input your destination to see personalized recommendations.</p>
+        <div className={styles.mapTitle}>
+          <h2 className="original-h2">Interactive Map</h2>
+          <p>Discover popular travel destinations or input your destination to see personalized recommendations.</p>
+        </div>
         <div id="map" ref={mapContainer} className={styles.map}></div>
       </div>
     </section>

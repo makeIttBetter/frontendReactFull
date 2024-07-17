@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Testimonials = () => (
-  <section id="testimonials" style={{ backgroundColor: '#f0f0f0', paddingTop: '80px', paddingBottom: '80px'}}>
+  <section id="testimonials" style={{ backgroundColor: '#f6f6f6', paddingTop: '80px', paddingBottom: '80px'}}>
     <div style={{ maxWidth: '800px', margin: '0 auto' }}>
       <h2 style={{ textAlign: 'center', marginBottom: '120px', fontSize: '42px'}}>What Our Users Say</h2>
       <div style={styles.container}>
@@ -37,7 +37,7 @@ const styles = {
     position: 'relative',
   },
   blockquote: {
-    backgroundColor: '#ffffff',
+    backgroundColor: 'white',
     padding: '20px',
     borderRadius: '10px',
     boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
