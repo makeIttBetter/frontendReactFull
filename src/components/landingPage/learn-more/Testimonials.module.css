@@ -38,21 +38,33 @@
   .leftBox {
     position: absolute;
     top: 0;
-    left: 0;
+    left: -100%;
     width: 35%;
-    transform: translateY(-50%) rotate(-10deg);
+    transform: translateY(0%) rotate(0deg);
     z-index: 1;
+    transition: transform 1s ease, left 1s ease;
   }
   
   .rightBox {
     position: absolute;
     top: 0;
-    right: 0;
+    right: -100%;
     width: 35%;
-    transform: translateY(-50%) rotate(10deg);
+    transform: translateY(0) rotate(0);
     z-index: 1;
+    transition: transform 1s ease, right 1s ease;
   }
   
+  .leftBox.active {
+    left: 0;
+    transform: translateY(-50%) rotate(-10deg);
+  }
+  
+  .rightBox.active {
+    right: 0;
+    transform: translateY(-50%) rotate(10deg);
+  }
+
   .centerBox {
     margin: 0 auto;
     width: 35%;
