@@ -15,8 +15,6 @@ function SignUpForm({ styles }) {
   });
   const [errors, setErrors] = useState({});
   const [passwordVisible, setPasswordVisible] = useState(false);
-  const { signIn } = useAuth();
-  const navigate = useNavigate();
 
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
@@ -82,6 +80,7 @@ function SignUpForm({ styles }) {
 
     try {
       const response = await signUp(name, email, password);
+      console.log(response);
       if (response.status === 200) {
         alert('Sign-up successful\nGo Login Now!');
       } else {
@@ -89,7 +88,12 @@ function SignUpForm({ styles }) {
         console.error('Sign-up failed');
       }
     } catch (error) {
-      console.error('Error during sign-up:', error);
+      if (error.response && error.response.status === 409) {
+        alert('User already exists');
+      } else {
+        alert('Sign-up failed');
+        console.error('Error during sign-up:', error);
+      }
     }
   };
 
@@ -144,7 +148,7 @@ function SignUpForm({ styles }) {
         {errors.email && <span className={styles.error}>{errors.email}</span>}
         <div className={styles['password-container']}>
           <input
-            type={passwordVisible ? "password" : "text"}
+            type={passwordVisible ? "text" : "password"}
             name="password"
             value={state.password}
             onChange={handleChange}
@@ -160,7 +164,7 @@ function SignUpForm({ styles }) {
         {errors.password && <span className={styles.error}>{errors.password}</span>}
         <div className={styles['password-container']}>
           <input
-            type={passwordVisible ? "password" : "text"}
+            type={passwordVisible ? "text" : "password"}
             name="confirmPassword"
             value={state.confirmPassword}
             onChange={handleChange}
