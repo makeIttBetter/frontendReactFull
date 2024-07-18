@@ -43,7 +43,7 @@ const MapFeatures = () => {
   return (
     <section id='scrollable-destination' className={`${styles['scrollable-destination']} ${styles['flex-container']}`}>
       <div className={styles.container}>
-        <h2 className='original-h2'>Enhance Your Travel Experience!</h2>
+        <h2 className='original-h2'>Map Top Travel Spots!</h2>
         <div className={styles['image-container']}>
           {destinations.map((destination, index) => (
             <div key={index} className={styles['image-box']}>

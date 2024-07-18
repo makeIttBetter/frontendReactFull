@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './Header.module.css';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
   const navigate = useNavigate();
+  const [visible, setVisible] = useState(true);
+  const [lastScrollTop, setLastScrollTop] = useState(0);
 
   const handleLearnMoreNavigation = (to) => {
     navigate('/learn-more', { state: { targetId: to } });
@@ -14,8 +16,26 @@ const Header = () => {
     navigate('/', { state: { targetId: to } });
   };
 
+  const handleScroll = () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+      setVisible(false);
+    } else {
+      setVisible(true);
+    }
+    setLastScrollTop(scrollTop <= 0 ? 0 : scrollTop);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [lastScrollTop]);
+
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${visible ? styles.visible : styles.hidden}`}>
       <div className={styles.container}>
         <nav className={styles.nav}>
           <div className={styles.logo} onClick={() => handleLandingNavigation()}>

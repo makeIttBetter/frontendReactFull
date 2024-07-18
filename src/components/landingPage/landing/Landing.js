@@ -30,8 +30,8 @@ const Landing = () => {
     <Hero navigate={navigate} />
     <Features styles={styles} />
     <MainSection styles={styles} />
-    <MapSection />
     <ScrollableDestination styles={styles} />
+    <MapSection />
     <Testimonials styles={styles} />
     <Download styles={styles} />
     <About />

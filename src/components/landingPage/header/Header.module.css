@@ -3,8 +3,21 @@
     color: #fff;
     padding-top: 5px;
     min-height: 5vh;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 1.5s ease, opacity 1.5s ease; /* Add transition for smooth fade effect */
   }
   
+  .header.hidden {
+    opacity: 0;
+}
+
+.header.visible {
+    opacity: 1;
+}
+
   .container {
     width: 90%;
     max-width: 1200px;
