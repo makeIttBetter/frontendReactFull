@@ -89,6 +89,7 @@ function SignUpForm({ styles }) {
         console.error('Sign-up failed');
       }
     } catch (error) {
+      alert(error.response.data)
       console.error('Error during sign-up:', error);
     }
   };
