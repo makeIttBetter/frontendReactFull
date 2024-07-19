@@ -42,9 +42,11 @@ function SignInForm({ styles }) {
         // Navigate to main page upon successful sign-up
         navigate('/main');
       } else {
+        alert('Sign-In failed')
         console.error('Sign-In failed');
       }
     } catch (error) {
+      alert(error.response.data.message)
       console.error('Error during sign-In:', error);
     }
     // signIn();
