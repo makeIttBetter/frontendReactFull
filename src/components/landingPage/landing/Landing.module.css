@@ -2,8 +2,10 @@
 .Landing {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
+    overflow: hidden;
+    background-color: var(--landing-background); /* Uses the global variable */
+    color: var(--landing-text); /* Uses the global variable */
 }
-
 .container {
     width: 90%;
     max-width: 1200px;

@@ -15,8 +15,6 @@ function SignUpForm({ styles }) {
   });
   const [errors, setErrors] = useState({});
   const [passwordVisible, setPasswordVisible] = useState(false);
-  const { signIn } = useAuth();
-  const navigate = useNavigate();
 
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
@@ -82,6 +80,7 @@ function SignUpForm({ styles }) {
 
     try {
       const response = await signUp(name, email, password);
+      console.log(response);
       if (response.status === 200) {
         alert('Sign-up successful\nGo Login Now!');
       } else {
@@ -89,8 +88,12 @@ function SignUpForm({ styles }) {
         console.error('Sign-up failed');
       }
     } catch (error) {
-      alert(error.response.data)
-      console.error('Error during sign-up:', error);
+      if (error.response && error.response.status === 409) {
+        alert('User already exists');
+      } else {
+        alert('Sign-up failed');
+        console.error('Error during sign-up:', error);
+      }
     }
   };
 
@@ -153,7 +156,7 @@ function SignUpForm({ styles }) {
             className={`${styles.input} ${styles['password-input']}`}
           />
           <FontAwesomeIcon 
-            icon={passwordVisible ? faEyeSlash : faEye} 
+            icon={passwordVisible ? faEye : faEyeSlash} 
             onClick={togglePasswordVisibility} 
             className={styles['toggle-icon']} 
           />
@@ -169,7 +172,7 @@ function SignUpForm({ styles }) {
             className={`${styles.input} ${styles['password-input']}`}
           />
           <FontAwesomeIcon 
-            icon={passwordVisible ? faEyeSlash : faEye} 
+            icon={passwordVisible ? faEye : faEyeSlash} 
             onClick={togglePasswordVisibility} 
             className={styles['toggle-icon']} 
           />

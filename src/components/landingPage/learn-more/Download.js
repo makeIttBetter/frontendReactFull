@@ -1,11 +1,20 @@
 import React from 'react';
+import styles from './Download.module.css';
 
-const Download = ({ styles }) => (
-  <section id="download">
-    <div className={styles.container}>
-      <h2>Download AiTripPlanner</h2>
-      <p>Available now on web and mobile platforms.</p>
-      <a href="#" className="cta-button">Download Now</a>
+const Download = () => (
+  <section id="download" className={styles.downloadSection}>
+    <div className={styles.downloadBox}>
+      <div className={styles.container}>
+        <div className={styles.downloadText}>
+          <h2 className={styles.downloadTitle}>Download AiTripPlanner</h2>
+          <p className={styles.downloadDescription}>Available now on web and mobile platforms.</p>
+        </div>
+      </div>
+      <div className={styles.container}>
+        <a href="#" className={styles.downloadButton}>
+          Download Now
+        </a>
+      </div>
     </div>
   </section>
 );

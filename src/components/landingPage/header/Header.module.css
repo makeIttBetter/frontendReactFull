@@ -1,11 +1,23 @@
   .header {
-    background: #fff;
-    color: #fff;
+    background: var(--header-background);
+    color: var(--header-text);
     padding-top: 5px;
     min-height: 5vh;
-    border-bottom: #77c9d4 3px solid;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 1.5s ease, opacity 1.5s ease; /* Add transition for smooth fade effect */
   }
   
+  .header.hidden {
+    opacity: 0;
+}
+
+.header.visible {
+    opacity: 1;
+}
+
   .container {
     width: 90%;
     max-width: 1200px;
@@ -18,9 +30,28 @@
     justify-content: space-between;
     align-items: center;
   }
+
+  .logo{
+    cursor: pointer;/*Make logo clickable*/
+  }
   
+  .originalH1 {
+    color: var(--header-logo);
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold; /* Keep text bold */
+  }
+
   .logo h1 {
-    color: #4e4b4b;
+    color: var(--header-logo);
+  }
+
+  .logoHoverEffect {
+    transition: text-shadow 0.3s ease-in-out; /* Add transition for smooth hover effect */
+  }
+  
+  .logoHoverEffect:hover {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Add shadow on hover */
   }
   
   .navLinks {
@@ -35,7 +66,7 @@
   }
   
   .navLinks a {
-    color: #4e4b4b;
+    color: var(--nav-link-color);
     text-decoration: none;
     text-transform: uppercase;
     font-size: 12px;
@@ -62,4 +93,13 @@
     header li {
         margin: 10px 0;
     }
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 10px; /* Adjust the gap as needed */
+}
+
+.cta:hover {
+  background: #5ca8b9;
 }

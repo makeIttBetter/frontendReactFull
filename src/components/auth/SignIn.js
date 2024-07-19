@@ -1,15 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { useAuth } from "components/guards/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { SignIn } from "api/auth";
+import '@fortawesome/fontawesome-free/css/all.css';
 
 function SignInForm({ styles }) {
   const [state, setState] = React.useState({
     username: "",
     password: ""
   });
+  const [passwordVisible, setPasswordVisible] = useState(false);
   const navigate = useNavigate();
   const { signIn } = useAuth();
+
+  const togglePasswordVisibility = () => {
+    setPasswordVisible(!passwordVisible);
+  };
 
   const handleChange = evt => {
     const value = evt.target.value;
@@ -69,14 +77,21 @@ function SignInForm({ styles }) {
           onChange={handleChange}
           className={styles.input}
         />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={state.password}
-          onChange={handleChange}
-          className={styles.input}
-        />
+        <div className={styles['password-container']}>
+          <input
+            type={passwordVisible ? "text" : "password"}
+            name="password"
+            value={state.password}
+            onChange={handleChange}
+            placeholder="Password"
+            className={`${styles.input} ${styles['password-input']}`}
+          />
+          <FontAwesomeIcon 
+            icon={passwordVisible ? faEye : faEyeSlash} 
+            onClick={togglePasswordVisibility} 
+            className={styles['toggle-icon']} 
+          />
+        </div>
         <a href="#" className={styles.link}>Forgot your password?</a>
         <button className={styles.button}>Sign In</button>
       </form>

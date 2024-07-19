@@ -1,24 +1,60 @@
-.map-section {
-    padding: 50px 10vw;
-    background: #f9f9f9;
-}
-
-.input-container {
-    background: white;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-}
-
-.input-container input {
-    padding: 5px;
-    margin-right: 5px;
-}
-
-.map {
-    height: 500px;
+.image-container {
+    display: flex;   
+    overflow-x: auto; /* Horizontal overflow scroll */
+    justify-content: space-around;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    flex-wrap: nowrap;
+    overflow:auto;
   }
-
-.map-section h2 {
-    
-}
+  
+  .image-box {
+    width: 25%; /* Adjust width as needed */
+    margin-right: 20px; /* Space between image boxes */
+    text-align: center;
+    border: 1px solid #ccc; /* Add border */
+    border-radius: 8px; /* Add rounded corners */
+    padding: 10px; /* Add padding */
+  }
+  
+  .map {
+    width: 100%;
+    height: 0;
+    padding-bottom: 133.33%; /* 4:3 aspect ratio (height/width = 3/4) */
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .map > div {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .description {
+    padding-left: 10px; /* Padding between image and description */
+    font-size: 24px;
+    line-height: 1.5;
+  }
+  
+  .image-box .description {
+    margin-top: 10px;
+    font-size: 18px;
+    line-height: 1.4;
+  }
+  
+  .scrollable-destination {
+    padding: 0 5vw;
+  }
+  
+  .scrollable-destination h2 {
+    padding-left: 20px;
+    font-size: 42px;
+    padding-top: 60px;
+    width: 100%;
+  }
+  

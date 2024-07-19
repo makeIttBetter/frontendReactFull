@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Main = ({ styles }) => (
-  <section id="learn-more">
+const MainSection = ({ styles }) => (
+  <section id="learn-more" style={{ padding: '50px 0' }}>
     <div className={styles.container}>
-      <h1>Discover Your Next Adventure with AiTripPlanner</h1>
-      <p>Seamlessly plan and organize your trips with AI.</p>
+      <h1 style={{ fontSize: '24px', marginBottom: '10px' }}>Discover Your Next Adventure with AiTripPlanner.</h1>
+      <p style={{ fontSize: '24px', marginBottom: '10px', paddingLeft: '10px'}}>Seamlessly plan and organize your trips with AI.</p>
     </div>
   </section>
 );
 
-export default Main;
+export default MainSection;

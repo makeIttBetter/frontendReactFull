@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import styles from "./Sign.module.css";
 import SignInForm from "./SignIn";
 import SignUpForm from "./SignUp";
+import logo from "assets/logo_small.png";
 
 function SignPage() {
   const [type, setType] = useState("signIn");
   const handleOnClick = text => {
     if (text !== type) {
       setType(text);
-      return;
     }
   };
   const containerClass = `${styles.container} ${
@@ -24,7 +24,10 @@ function SignPage() {
 
   return (
     <div className={styles.SignPage}>
-      <h2>Flomad</h2>
+      <div className={styles["title-container"]}>
+        <img src={logo} alt="Flomad Logo" className={styles.logo} />
+        <h2 className={styles.title}>Flomad</h2>
+      </div>
       <div className={containerClass} id={styles.container}>
         <SignUpForm styles={styles} />
         <SignInForm styles={styles} />

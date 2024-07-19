@@ -11,6 +11,20 @@
   margin: -20px 0 50px;
 }
 
+.body-sign .title-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  margin: 0 0 20px;
+}
+
+.body-sign .logo {
+  width: 10%;
+  margin-left: 30%;
+  margin-right: 5%;
+}
+
 .body-sign h1 {
   font-weight: bold;
   margin: 0;
@@ -44,8 +58,8 @@
 
 .body-sign button {
   border-radius: 20px;
-  border: 1px solid #ff4b2b;
-  background-color: #ff4b2b;
+  border: 1px solid #77c9d4;
+  background-color: #77c9d4;
   color: #ffffff;
   font-size: 12px;
   font-weight: bold;
@@ -159,9 +173,9 @@
 }
 
 .body-sign .overlay {
-  background: #ff416c;
-  background: -webkit-linear-gradient(to right, #ff4b2b, #ff416c);
-  background: linear-gradient(to right, #ff4b2b, #ff416c);
+  background: #4a90e2;
+  background: -webkit-linear-gradient(to right, #77c9d4, #4a90e2);
+  background: linear-gradient(to right, #77c9d4, #4a90e2);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 0;

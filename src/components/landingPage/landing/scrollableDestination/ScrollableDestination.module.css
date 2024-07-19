@@ -4,6 +4,7 @@
     justify-content: space-around;
     padding: 20px;
     margin-bottom: 20px;
+    margin-top: 20px;
     flex-wrap: nowrap;
     overflow:auto;
 }
@@ -21,18 +22,18 @@
     width: 100%;
     height: auto;
     border-radius: 8px;
-    aspect-ratio: 4/3; /* Set the aspect ratio based on the Paris image */
+    aspect-ratio: 3/4; /* Set the aspect ratio based on the Paris image */
 }
 
 .description {
     padding-left: 10px; /* Padding between image and description */
-    font-size: 14px;
+    font-size: 24px;
     line-height: 1.5;
 }
 
 .image-box .description {
     margin-top: 10px;
-    font-size: 14px;
+    font-size: 18px;
     line-height: 1.4;
 }
 
@@ -42,5 +43,13 @@
 
 .scrollable-destination h2 {
     padding-left: 20px;
+    font-size: 42px;
+    padding-top: 20px;
+    width: 100%;
 }
 
+.seeMore {
+    text-decoration: underline; /* Underlines the "See More*/
+    cursor: pointer; /* Change cursor pointer to indicate it's clickable*/
+    color: #5ca8b9; /* Change color of the line */
+}
