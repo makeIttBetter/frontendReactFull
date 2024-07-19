@@ -1,6 +1,6 @@
   .header {
-    background: #f6f6f6;
-    color: #fff;
+    background: var(--header-background);
+    color: var(--header-text);
     padding-top: 5px;
     min-height: 5vh;
     position: fixed;
@@ -36,14 +36,14 @@
   }
   
   .originalH1 {
-    color: #4e4b4b;
+    color: var(--header-logo);
     margin: 0;
     font-size: 24px;
     font-weight: bold; /* Keep text bold */
   }
 
   .logo h1 {
-    color: #4e4b4b;
+    color: var(--header-logo);
   }
 
   .logoHoverEffect {
@@ -66,7 +66,7 @@
   }
   
   .navLinks a {
-    color: #4e4b4b;
+    color: var(--nav-link-color);
     text-decoration: none;
     text-transform: uppercase;
     font-size: 12px;

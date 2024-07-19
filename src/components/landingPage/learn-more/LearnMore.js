@@ -2,8 +2,6 @@ import React, { useEffect } from 'react';
 import Screenshot from './Screenshot';
 import Download from './Download';
 import styles from './LearnMore.module.css';
-import { useLocation } from 'react-router-dom';
-import { scroller } from 'react-scroll';
 
 const LearnMore = () => {
   useEffect(() => {
@@ -12,8 +10,8 @@ const LearnMore = () => {
 
   return (
     <div className={styles.LearnMore}>
-      <Download styles={styles} />
       <Screenshot styles={styles} />
+      {/*<Download styles={styles}/>*/}
     </div>
   );
 };

@@ -3,7 +3,8 @@
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     overflow: hidden;
-    background-color: #f6f6f6;/* General styles for the LandingPage */
+    background-color: var(--landing-background); /* Uses the global variable */
+    color: var(--landing-text); /* Uses the global variable */
 }
 .container {
     width: 90%;

@@ -3,7 +3,7 @@ import styles from './Header.module.css';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
-const Header = () => {
+const Header = ({toggleDarkMode, darkMode}) => {
   const navigate = useNavigate();
   const [visible, setVisible] = useState(true);
   const [lastScrollTop, setLastScrollTop] = useState(0);
@@ -35,7 +35,7 @@ const Header = () => {
   }, [lastScrollTop]);
 
   return (
-    <header className={`${styles.header} ${visible ? styles.visible : styles.hidden}`}>
+    <header className={`${styles.header} ${darkMode ? styles.darkMode : ''} ${visible ? styles.visible : styles.hidden}`}>
       <div className={styles.container}>
         <nav className={styles.nav}>
           <div className={styles.logo} onClick={() => handleLandingNavigation()}>
@@ -55,7 +55,7 @@ const Header = () => {
           </ul>
           <div className={styles.buttonContainer}>
             <Link to="/auth" className={styles.cta}>Log In</Link> {/* Updated to use Link */}
-            <a href="#" className={styles.cta}>Start Planning</a>
+            <a href="#" className={styles.cta} onClick={toggleDarkMode}>DarkMode</a>
           </div>
         </nav>
       </div>

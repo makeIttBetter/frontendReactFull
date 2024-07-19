@@ -1,0 +1,23 @@
+/* GoogleMapsComponent.css */
+
+.container {
+  width: 100%;
+  max-width: 1450px;
+  height: 600px;
+  border-radius: 8px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.search-input {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  width: 200px;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+

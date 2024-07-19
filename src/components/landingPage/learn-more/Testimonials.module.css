@@ -1,5 +1,4 @@
 .testimonialsSection {
-    background-color: #f6f6f6;
     padding-top: 80px;
     padding-bottom: 80px;
   }
@@ -22,7 +21,9 @@
   }
   
   .blockquote {
-    background-color: white;
+    background-color: var(--blockquote-background); /* Uses the global variable */
+    color: var(--blockquote-text); /* Uses the global variable */
+    /*background-color: white;*/
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -42,7 +43,7 @@
     width: 35%;
     transform: translateY(0%) rotate(0deg);
     z-index: 1;
-    transition: transform 1s ease, left 1s ease;
+    transition: transform 1.5s ease, left 1s ease;
   }
   
   .rightBox {
@@ -52,7 +53,7 @@
     width: 35%;
     transform: translateY(0) rotate(0);
     z-index: 1;
-    transition: transform 1s ease, right 1s ease;
+    transition: transform 1.5s ease, right 1s ease;
   }
   
   .leftBox.active {
