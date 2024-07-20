@@ -15,15 +15,23 @@ const Testimonials = () => {
       if (scrollPosition > testimonialsTop) {
         const leftBox = testimonials.querySelector(`.${styles.leftBox}`);
         const rightBox = testimonials.querySelector(`.${styles.rightBox}`);
+        const leftBoxBottom = testimonials.querySelector(`.${styles.leftBoxBottom}`);
+        const rightBoxBottom = testimonials.querySelector(`.${styles.rightBoxBottom}`);
 
         if (leftBox) leftBox.classList.add(styles.active);
         if (rightBox) rightBox.classList.add(styles.active);
+        if (leftBoxBottom) leftBoxBottom.classList.add(styles.active);
+        if (rightBoxBottom) rightBoxBottom.classList.add(styles.active);
       } else {
         const leftBox = testimonials.querySelector(`.${styles.leftBox}`);
         const rightBox = testimonials.querySelector(`.${styles.rightBox}`);
+        const leftBoxBottom = testimonials.querySelector(`.${styles.leftBoxBottom}`);
+        const rightBoxBottom = testimonials.querySelector(`.${styles.rightBoxBottom}`);
 
         if (leftBox) leftBox.classList.remove(styles.active);
         if (rightBox) rightBox.classList.remove(styles.active);
+        if (leftBoxBottom) leftBoxBottom.classList.remove(styles.active);
+        if (rightBoxBottom) rightBoxBottom.classList.remove(styles.active);
       }
     };
 
@@ -52,6 +60,16 @@ const Testimonials = () => {
           <div className={styles.rightBox}>
             <div className={styles.blockquote}>
               <p className={styles.p}>"I'm amazed by how accurately it suggests activities based on my preferences."</p>
+            </div>
+          </div>
+          <div className={styles.leftBoxBottom}>
+            <div className={styles.blockquote}>
+              <p className={styles.p}>"The personalized suggestions made my trip planning a breeze!"</p>
+            </div>
+          </div>
+          <div className={styles.rightBoxBottom}>
+            <div className={styles.blockquote}>
+              <p className={styles.p}>"I love how the AI TripPlanner finds unique experiences tailored to my tastes."</p>
             </div>
           </div>
         </div>
