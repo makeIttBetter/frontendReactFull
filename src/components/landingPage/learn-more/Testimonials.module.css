@@ -72,31 +72,31 @@
 }
 
 .leftBox.active, .leftBoxBottom.active {
-  left: -15%;
+  left: -10%;
 }
 
 .rightBox.active, .rightBoxBottom.active {
-  right: -15%;
+  right: -10%;
 }
 
 .leftBox.active {
-  transform: translateY(-100%) rotate(0deg);
+  transform: translateY(calc(-100% + 50px)) rotate(0deg); /* Adjust as needed */
 }
 
 .rightBox.active {
-  transform: translateY(-100%) rotate(0deg);
+  transform: translateY(calc(-100% + 50px)) rotate(0deg); /* Adjust as needed */
 }
 
 .leftBoxBottom.active {
-  transform: translateY(50%) rotate(0deg); /* Adjust as needed */
+  transform: translateY(calc(50% + 50px)) rotate(0deg); /* Adjust as needed */
 }
 
 .rightBoxBottom.active {
-  transform: translateY(50%) rotate(0deg); /* Adjust as needed */
+  transform: translateY(calc(50% + 50px)) rotate(0deg); /* Adjust as needed */
 }
 
 .centerBox {
-  margin: 0 auto;
+  margin: 50px auto 0 auto; /* Adjust the top margin as needed */
   width: 35%;
   z-index: 2;
 }
