@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { useTheme } from './ThemeContext';
-import 'styles/theme.css';
+import './ThemeToggle.css';
 
 const ThemeToggle = () => {
   const { theme, toggleTheme } = useTheme();
 
-  const root = document.documentElement;
-  const landingBackground = getComputedStyle(root).getPropertyValue('--landing-background').trim();
+  // const root = document.documentElement;
+  // const landingBackground = getComputedStyle(root).getPropertyValue('--background').trim();
 
   return (
     <div className="theme-switch">
       <input 
         type="checkbox" 
         id="theme-checkbox" 
-        checked={theme} 
+        checked={theme === 'dark'}
         onChange={toggleTheme} 
       />
       <label htmlFor="theme-checkbox">
