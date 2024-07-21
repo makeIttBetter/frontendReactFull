@@ -2,8 +2,12 @@ import React, { useState, useEffect } from 'react';
 import styles from './Header.module.css';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import ThemeToggle from 'components/guards/ThemeToggle';
 
-const Header = ({toggleDarkMode, darkMode}) => {
+// {toggleDarkMode, darkMode}
+// ${darkMode ? styles.darkMode : ''} 
+
+const Header = () => {
   const navigate = useNavigate();
   const [visible, setVisible] = useState(true);
   const [lastScrollTop, setLastScrollTop] = useState(0);
@@ -35,7 +39,7 @@ const Header = ({toggleDarkMode, darkMode}) => {
   }, [lastScrollTop]);
 
   return (
-    <header className={`${styles.header} ${darkMode ? styles.darkMode : ''} ${visible ? styles.visible : styles.hidden}`}>
+    <header className={`${styles.header} ${visible ? styles.visible : styles.hidden}`}>
       <div className={styles.container}>
         <nav className={styles.nav}>
           <div className={styles.logo} onClick={() => handleLandingNavigation()}>
@@ -55,7 +59,8 @@ const Header = ({toggleDarkMode, darkMode}) => {
           </ul>
           <div className={styles.buttonContainer}>
             <Link to="/auth" className={styles.cta}>Log In</Link> {/* Updated to use Link */}
-            <a href="#" className={styles.cta} onClick={toggleDarkMode}>DarkMode</a>
+            {/* <a href="#" className={styles.cta} onClick={toggleDarkMode}>DarkMode</a> */}
+            <ThemeToggle />
           </div>
         </nav>
       </div>

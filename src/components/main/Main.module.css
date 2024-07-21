@@ -1,0 +1,42 @@
+.chat-history {
+    background-color: var(--background);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(var(--shadow), 0.1);
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .message {
+    margin-bottom: 10px;
+  }
+  
+  .chat-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .chat-header img {
+    height: 40px;
+    margin-right: 10px;
+  }
+
+  .main-container {
+    background-color: var(--surface);
+  }
+
+  .history-container {
+    background-color: var(--background);
+  }
+
+  .prompt-card {
+    background-color: var(--surface);
+    box-shadow: 0 4px 6px -1px rgba(var(--shadow), 0.1), 0 2px 4px -1px rgba(var(--shadow), 0.06);
+  }
+
+  .prompt {
+    color: var(--surface-text);
+  }
+  
