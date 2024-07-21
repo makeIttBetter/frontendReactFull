@@ -1,9 +1,9 @@
 import React from 'react';
-import featureIcon1 from 'assets/places/borabora.jpg';
-import featureIcon2 from 'assets/places/borabora.jpg';
-import featureIcon3 from 'assets/places/borabora.jpg';
-import featureIcon4 from 'assets/places/borabora.jpg';
-import featureIcon5 from 'assets/places/borabora.jpg';
+import featureIcon1 from 'assets/features/Feature-1.png';
+import featureIcon2 from 'assets/features/Feature-2.png';
+import featureIcon3 from 'assets/features/Feature-3.png';
+import featureIcon4 from 'assets/features/Feature-4.png';
+import featureIcon5 from 'assets/features/Feature-5.png';
 import styles from './Feature.module.css'; // Ensure correct import path
 
 const Features = () => {
@@ -43,8 +43,8 @@ const Features = () => {
           <div className={styles['image-box']}>
             <img src={featureIcon5} alt="Feature 5" />
             <div className={styles.description}>
-              <strong>Event Recommendations</strong><br />
-              Find events and activities happening around your destination.
+              <strong>Currency Exchange </strong><br />
+              Stay updated with the latest exchange rates to manage your travel budget effectively.
             </div>
           </div>
         </div>

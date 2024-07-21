@@ -7,7 +7,7 @@
     margin-top: 20px;
     flex-wrap: nowrap;
     overflow:auto;
-    padding-bottom: 100px;/*Originally not here*/
+    padding-bottom: 100px;/*originally not here*/
 }
 
 .image-box {
@@ -36,10 +36,6 @@
     margin-top: 10px;
     font-size: 18px;
     line-height: 1.4;
-}
-
-.image-box {
-    background-color: var(--surface);
 }
 
 .scrollable-destination {
