@@ -4,7 +4,7 @@ import MainContent from './MainContent';
 import ChatInput from 'components/chat/ChatInput';
 import ChatService from 'api/ChatService';
 import logo from 'assets/logo.png'; // Importer le logo
-import 'index.css';
+import styles from './Main.module.css';
 
 function Main() {
   const [history, setHistory] = useState([]);
@@ -38,16 +38,16 @@ function Main() {
   return (
     <div className="flex h-screen">
       <Sidebar />
-      <div className="flex-1 flex flex-col items-center justify-center p-6">
+      <div className={`${styles['main-container']} flex-1 flex flex-col items-center justify-center p-6`}>
         {showPrompts ? (
           <MainContent onPromptClick={handlePromptClick} />
         ) : (
           <>
-            <div className="chat-header flex items-center mb-4">
+            <div className={`${styles['chat-header']} flex items-center mb-4`}>
               <img src={logo} alt="Flomad Logo" className="h-8 mr-2" />
               <h1 className="text-2xl font-bold">Flomad</h1>
             </div>
-            <div className="chat-history bg-white p-4 rounded-lg shadow-md w-full max-w-2xl">
+            <div className={`${styles['chat-history']} bg-white p-4 rounded-lg shadow-md w-full max-w-2xl`}>
               <h2 className="text-lg font-semibold mb-4 text-center">Chat History</h2>
               {history.map((msg, index) => (
                 <div key={index} className={`message ${msg.sender === 'user' ? 'text-right' : 'text-left'}`}>

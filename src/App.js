@@ -5,26 +5,29 @@ import SignPage from 'components/auth/SignPage';
 import { AuthProvider } from 'components/guards/AuthContext';
 import ProtectedRoute from 'components/guards/ProtectedRoute';
 import LandingPage from './components/landingPage/LandingPage';
+import { ThemeProvider } from 'components/guards/ThemeContext';
 import './index.css';
 
 const App = () => {
   return (
     <AuthProvider>
-      <Router>
-        <Routes>
-          <Route path="/auth" element={<SignPage />} />
-          <Route path="/*" element={<LandingPage />} />
-          <Route
-            path="/main"
-            element={
-              <ProtectedRoute>
-                <Main />
-              </ProtectedRoute>
-            }
-          />
-          <Route path="*" element={<Navigate to="/auth" />} />
-        </Routes>
-      </Router>
+      <ThemeProvider>
+        <Router>
+          <Routes>
+            <Route path="/auth" element={<SignPage />} />
+            <Route path="/*" element={<LandingPage />} />
+            <Route
+              path="/main"
+              element={
+                <ProtectedRoute>
+                  <Main />
+                </ProtectedRoute>
+              }
+            />
+            <Route path="*" element={<Navigate to="/auth" />} />
+          </Routes>
+        </Router>
+      </ThemeProvider>
     </AuthProvider>
   );
 };

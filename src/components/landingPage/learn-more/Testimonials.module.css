@@ -21,8 +21,8 @@
   }
   
   .blockquote {
-    background-color: var(--blockquote-background); /* Uses the global variable */
-    color: var(--blockquote-text); /* Uses the global variable */
+    background-color: var(--primary); /* Uses the global variable */
+    color: var(--primary-text); /* Uses the global variable */
     /*background-color: white;*/
     padding: 20px;
     border-radius: 10px;

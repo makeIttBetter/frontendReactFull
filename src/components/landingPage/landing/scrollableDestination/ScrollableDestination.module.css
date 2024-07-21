@@ -37,6 +37,10 @@
     line-height: 1.4;
 }
 
+.image-box {
+    background-color: var(--surface);
+}
+
 .scrollable-destination {
     padding: 0 5vw;
 }

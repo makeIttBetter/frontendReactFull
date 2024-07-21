@@ -2,58 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.chat-input {
-  display: flex;
-  padding: 10px;
-  background-color: white;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 800px;
-  margin: 20px auto;
-}
-
-.chat-input input {
-  flex: 1;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.chat-input button {
-  margin-left: 10px;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  background-color: #4caf50;
-  color: white;
-  cursor: pointer;
-}
-
-.chat-history {
-  background-color: white;
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  max-width: 800px;
-  margin: auto;
-}
-
-.message {
-  margin-bottom: 10px;
-}
-
-.chat-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.chat-header img {
-  height: 40px;
-  margin-right: 10px;
-}
-
 .original-h1 {
   @apply text-2xl font-bold; /* Adjust to match the default styles */
 }

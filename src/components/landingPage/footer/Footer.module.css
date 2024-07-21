@@ -1,6 +1,6 @@
 .footer {
-    background-color: var(--footer-background);
-    color: var(--footer-text);
+    background-color: var(--background);
+    color: var(--background-text);
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -9,5 +9,5 @@
   
 .container {
     width: 100%;
-    background-color: var(--container-background);
+    background-color: var(--background);
 }
