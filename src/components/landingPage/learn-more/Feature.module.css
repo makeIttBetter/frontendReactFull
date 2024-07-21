@@ -23,7 +23,7 @@
   width: 100%;
   height: auto;
   border-radius: 8px;
-  aspect-ratio: 1; /* Set the aspect ratio based on the Paris image */
+  aspect-ratio: 4/5; /* Set the aspect ratio based on the Paris image */
 }
 
 .description {
