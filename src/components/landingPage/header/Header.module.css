@@ -1,7 +1,7 @@
   .header {
-    background: var(--header-background);
-    color: var(--header-text);
-    padding-top: 5px;
+    background: var(--surface);
+    color: var(--surface);
+    padding: 5px;
     min-height: 5vh;
     position: fixed;
     width: 100%;
@@ -36,14 +36,14 @@
   }
   
   .originalH1 {
-    color: var(--header-logo);
+    color: var(--secondary-text);
     margin: 0;
     font-size: 24px;
     font-weight: bold; /* Keep text bold */
   }
 
   .logo h1 {
-    color: var(--header-logo);
+    color: var(--secondary-text);
   }
 
   .logoHoverEffect {
@@ -66,14 +66,14 @@
   }
   
   .navLinks a {
-    color: var(--nav-link-color);
+    color: var(--secondary-text);
     text-decoration: none;
     text-transform: uppercase;
     font-size: 12px;
   }
   
   .cta {
-    background: #77c9d4;
+    background: var(--theme-color);
     padding: 10px 20px;
     border-radius: 5px;
     text-transform: uppercase;

@@ -20,7 +20,7 @@
 }
 
 .contact form button {
-    background: #77c9d4;
+    background: var(--theme-color);
     color: #fff;
     padding: 10px 20px;
     border: none;

@@ -11,6 +11,7 @@
 }
 
 .image-box {
+  background-color: var(--surface);
   width: 30%; /* Adjust width as needed 100% */
   margin-right: 20px; /* Space between image boxes */
   text-align: center;

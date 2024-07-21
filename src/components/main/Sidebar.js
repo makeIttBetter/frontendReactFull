@@ -1,4 +1,5 @@
 import React from 'react';
+import ThemeToggle from 'components/guards/ThemeToggle';
 
 const Sidebar = () => {
   return (
@@ -11,6 +12,7 @@ const Sidebar = () => {
           <li className="p-4 hover:bg-gray-700">Settings</li>
           <li className="p-4 hover:bg-gray-700">Support and Guide</li>
         </ul>
+        <ThemeToggle />
       </nav>
       <div className="p-4 hover:bg-gray-700 cursor-pointer">Logout</div>
     </div>

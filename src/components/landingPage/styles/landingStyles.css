@@ -1,82 +1,39 @@
 /* landingStyles.css */
+
+/* Default light mode colors */
+:root {
+  --blockquote-background: #fff;
+  --blockquote-text: #000;
+  --landing-background: #f6f6f6;
+  --landing-text: #000;
+  --footer-background: #f6f6f6;
+  --footer-text: #000;
+  --container-background: #f6f6f6;
+  --header-background: #f6f6f6;
+  --header-text: #f6f6f6;
+  --header-logo: #000;
+  --nav-link-color: #000;
+  --learn-more-background: #f6f6f6;
+}
+
 .light-mode {
   color: #000;
 }
 
 .dark-mode {
   color: #fff;
-}
 
-:root {
-  --blockquote-background: #fff;
-  --blockquote-text: #000;
-}
-
-/* Dark mode colors */
-.dark-mode {
   --blockquote-background: #333; /* Grey for dark mode */
   --blockquote-text: #ddd;
-}
-
-/* Apply CSS variables to blockquote */
-.blockquote {
-  background-color: var(--blockquote-background);
-  color: var(--blockquote-text);
-}
-
-:root {
-  --landing-background: #f6f6f6; /* Light mode background */
-  --landing-text: #000; /* Light mode text color */
-}
-
-/* Dark mode colors */
-.dark-mode {
   --landing-background: #000; /* Dark mode background */
   --landing-text: #fff; /* Dark mode text color */
-}
-
-/* Apply CSS variables to landing */
-.Landing {
-  background-color: var(--landing-background);
-  color: var(--landing-text);
-}
-
-/* Default light mode colors */
-:root {
-  --footer-background: #f6f6f6; /* Light mode background */
-  --footer-text: #000; /* Light mode text color */
-  --container-background: #f6f6f6; /* Light mode container background */
-}
-
-/* Dark mode colors */
-.dark-mode {
   --footer-background: #000; /* Dark mode background */
   --footer-text: #ddd; /* Dark mode text color */
   --container-background: #000; /* Dark mode container background */
-}
-
-
-:root {
-  --header-background: #f6f6f6; /* Light mode background */
-  --header-text: #f6f6f6; /* Light mode text color */
-  --header-logo: #000; /* Light mode logo color */
-  --nav-link-color: #000; /* Light mode nav link color */
-}
-
-/* Dark mode colors */
-.dark-mode {
   --header-background: #000; /* Dark mode background */
   --header-text: #000; /* Dark mode text color */
   --header-logo: #ddd; /* Dark mode logo color */
   --nav-link-color: #ddd; /* Dark mode nav link color */
-}
-
-/* Default light mode colors */
-:root {
-  --learn-more-background: #f6f6f6; /* Light mode background */
-}
-
-/* Dark mode colors */
-.dark-mode {
   --learn-more-background: #000; /* Dark mode background */
 }
+
