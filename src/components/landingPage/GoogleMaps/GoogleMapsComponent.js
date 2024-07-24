@@ -19,7 +19,6 @@ const GoogleMapsComponent = () => {
   const [map, setMap] = useState(null);
   const [searchBox, setSearchBox] = useState(null);
   const [markers, setMarkers] = useState([]);
-  const apiKey = process.env.GOOGLE_MAPS_API_KEY;
 
   useEffect(() => {
     if (map) {
@@ -29,7 +28,7 @@ const GoogleMapsComponent = () => {
         name: dest.name
       })));
     }
-    console.log('SearchBox state updated:', searchBox);
+    // console.log('SearchBox state updated:', searchBox);
   }, [map, searchBox]);
 
   const onLoadMap = useCallback((mapInstance) => {
@@ -38,7 +37,7 @@ const GoogleMapsComponent = () => {
 
   const onLoadSearchBox = useCallback((searchBoxInstance) => {
     setSearchBox(searchBoxInstance);
-    console.log('SearchBox Loaded:', searchBoxInstance);
+    // console.log('SearchBox Loaded:', searchBoxInstance);
   }, []);
 
   const onPlacesChanged = useCallback(() => {
@@ -74,7 +73,7 @@ const GoogleMapsComponent = () => {
   return (
     <div className="map-container">
       <h1 className="map-title">Search, Zoom, and Discover</h1>
-      <LoadScript googleMapsApiKey={apiKey} libraries={["places"]}>
+      <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY} libraries={["places"]}>
         <GoogleMap
           mapContainerClassName="container"
           center={center}
