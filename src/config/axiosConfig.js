@@ -18,13 +18,12 @@ apiClient.interceptors.request.use(
       if (
         !config.url.includes('/auth/signup') && 
         !config.url.includes('/auth/login') &&
-        !config.url.includes('/learn-more') &&
-        !config.url.includes('/')
+        !config.url.includes('/learn-more')
       ) {
         config.headers.Authorization = `Bearer ${token}`;
       }
     }
-    console.log('Request config:', config);  // Log the request configuration
+    // console.log('Request config:', config);  // Log the request configuration
     return config;
   },
   (error) => {

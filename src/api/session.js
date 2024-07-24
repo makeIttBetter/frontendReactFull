@@ -10,24 +10,24 @@ export const getSessionList = async () => {
   }
 };
 
-export const getSessionHistory = async (sessionId) => {
+export const createSession = async (title) => {
   try {
-    const response = await apiClient.get(`/sessions/${sessionId}`);
-    console.log('getSessionHistory:', response);
+    const response = await apiClient.post('/sessions', {
+      title
+    });
+    // console.log('createSession:', response);
     return response;
   } catch (error) {
     throw error;
   }
 };
 
-export const createSession = async (title) => {
+export const deleteSession = async (sessionId) => {
   try {
-    const response = await apiClient.post('/sessions/create', {
-      title
-    });
-    console.log('createSession:', response);
+    const response = await apiClient.delete(`/sessions/${sessionId}`);
+    // console.log('deleteSession:', response);
     return response;
   } catch (error) {
     throw error;
   }
-};
+}

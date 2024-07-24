@@ -2,10 +2,10 @@ import apiClient from 'config/axiosConfig';
 
 const API_URL = '/api/chat/call';
 
-const sendMessage = (message) => {
+export const sendChat = (message, sessionId) => {
   return apiClient.post(API_URL, { 
     message,
-    "sessionId": "0"
+    sessionId
   }, {
     headers: {
       'Content-Type': 'application/json'
@@ -13,4 +13,26 @@ const sendMessage = (message) => {
   });
 };
 
-export default { sendMessage };
+export const getChatHistory = async (sessionId) => {
+  try {
+    const response = await apiClient.get(`/messages/session/${sessionId}`);
+    // console.log('getChatHistory:', response);
+    return response;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const storeChat = async (sessionId, content, messageType) => {
+  try {
+    const response = await apiClient.post('/messages', {
+      sessionId,
+      content,
+      messageType
+    });
+    // console.log('storeChat:', response);
+    return response;
+  } catch (error) {
+    throw error;
+  }
+};

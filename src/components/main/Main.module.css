@@ -35,8 +35,21 @@
     margin-right: 10px;
   }
 
+  .main-container-outer {
+    max-height: 100vh;
+    overflow-y: auto;
+    background-color: var(--surface);
+  }
+
   .main-container {
     background-color: var(--surface);
+    padding-bottom: 5%;
+    height: 500%;
+    /* overflow: hidden; */
+  }
+
+  .main-container-outer > h2 {
+    color: var(--surface-text);
   }
 
   .history-container {
@@ -50,5 +63,21 @@
 
   .prompt {
     color: var(--surface-text);
+  }
+
+  .user-mesg {
+    background-color: var(--primary);
+  }
+
+  .user-mesg > p {
+    padding-right: 10px;
+  }
+
+  .bot-mesg {
+    background-color: var(--background);
+  }
+
+  .bot-mesg > p {
+    padding-left: 10px;
   }
   
