@@ -80,4 +80,12 @@
   .bot-mesg > .p {
     padding-left: 10px;
   }
+
+  .themeToggle {
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1000;
+    /* Using Tailwind classes via @apply */
+    @apply fixed top-5 right-5;
+  }
   

@@ -6,6 +6,7 @@ import {sendChat, getChatHistory, storeChat} from 'api/ChatService';
 import logo from 'assets/logo.png'; // Importer le logo
 import styles from './Main.module.css';
 import {getSessionList, deleteSession, createSession} from 'api/session';
+import ThemeToggle from 'components/guards/ThemeToggle';
 
 const maxAttempts = 2;
 
@@ -171,9 +172,9 @@ function Main() {
         onDeleteSession={handleDeleteSession}
       />
       <div className={`${styles['main-container-outer']} flex-1 flex flex-col items-center p-6 ${history.length > 0 ? '' : 'justify-center'}`}>
-        {/* {selectedSession && (
-          <h2 className={`text-lg font-semibold mb-4 text-center`}>{selectedSession.title}</h2>
-        )} */}
+        <div className={styles.themeToggle}>
+          <ThemeToggle/>
+        </div>
         <MainContent 
           onSendMessage={handleSendMessage}
           newChatName={newChatName} 

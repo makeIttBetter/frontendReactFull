@@ -1,5 +1,4 @@
 import React from 'react';
-import ThemeToggle from 'components/guards/ThemeToggle';
 import { useAuth } from "components/guards/AuthContext";
 
 const Sidebar = ({ chatSessions, onCreateNewChat, onSelectSession, selectedSession, onDeleteSession }) => {
@@ -42,7 +41,6 @@ const Sidebar = ({ chatSessions, onCreateNewChat, onSelectSession, selectedSessi
           <li className="p-4 hover:bg-gray-700 cursor-pointer">Settings</li>
           <li className="p-4 hover:bg-gray-700 cursor-pointer">Support and Guide</li> */}
         </ul>
-        <ThemeToggle />
       </nav>
       <div 
         className="p-4 hover:bg-gray-700 cursor-pointer"
