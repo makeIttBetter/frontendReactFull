@@ -23,7 +23,7 @@ const Features = () => {
             <img src={featureIcon2} alt="Feature 2" />
             <div className={styles.description}>
               <strong>Real-Time Updates</strong><br />
-              Get real-time updates on events and locations during your trip.
+              Get real-time updates on weather and locations during your trip.
             </div>
           </div>
           <div className={styles['image-box']}>
