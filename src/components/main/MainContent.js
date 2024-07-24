@@ -80,7 +80,7 @@ const MainContent = ({ onSendMessage, newChatName, setChatSessions, history, onS
             {/* <h2 className="text-lg font-semibold mb-4 text-center">Chat History</h2> */}
             {history.map((msg, index) => (
               <div key={index} className={`message rounded-lg ${msg.messageType === 'USER' ? `text-right ${styles['user-mesg']}` : `text-left ${styles['bot-mesg']}`}`}>
-                <p>
+                <div className={styles.p}>
                   <strong>{msg.messageType === 'USER' ? 'You' : 'Flomad'}:</strong>{' '}
                   {msg.content.split('\n').map((line, index) => (
                     <React.Fragment key={index}>
@@ -88,7 +88,7 @@ const MainContent = ({ onSendMessage, newChatName, setChatSessions, history, onS
                       <br />
                     </React.Fragment>
                   ))}
-                </p>
+                </div>
               </div>
             ))}
           </div>

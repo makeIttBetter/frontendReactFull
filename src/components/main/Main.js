@@ -5,9 +5,9 @@ import ChatInput from './ChatInput';
 import {sendChat, getChatHistory, storeChat} from 'api/ChatService';
 import logo from 'assets/logo.png'; // Importer le logo
 import styles from './Main.module.css';
-import {getSessionList, deleteSession} from 'api/session';
+import {getSessionList, deleteSession, createSession} from 'api/session';
 
-const maxAttempts = 1;
+const maxAttempts = 2;
 
 function Main() {
   const [history, setHistory] = useState([]);
@@ -22,6 +22,7 @@ function Main() {
         const response = await getSessionList();
         if (response && response.data) {
           setChatSessions(response.data);
+          handleSelectSession(response.data[0]);
         } else {
           setChatSessions([]);
         }
@@ -34,8 +35,20 @@ function Main() {
     fetchChatSessions();
   }, []);
 
-  const handleSendMessage = async (message) => {
-    await sendMessage(message);
+  const handleSendMessage = async (message, attempt = 0) => {
+    if (attempt >= maxAttempts) {
+      console.error('Max attempts reached. Could not send Message.');
+      return null;
+    }
+    // console.log('Selected session:', selectedSession);
+    if (selectedSession === null) {
+      console.error('No session selected');
+      return new Promise((resolve) =>
+        setTimeout(async () => resolve(await handleSendMessage(message, attempt + 1)), 1000)
+      );
+    } else {
+      await sendMessage(message);
+    }
   };
 
   const sendMessage = async (message) => {
@@ -64,9 +77,36 @@ function Main() {
     // }
   };
 
-  const handleCreateNewChat = () => {
-    const newChat = `Chat ${chatSessions.length + 1}`;
+  const handleCreateNewChat = async (name) => {
+
+    const newChat = name || `Chat ${chatSessions.length + 1}`;
     setNewChatName(newChat);
+
+    if (newChatName === 'Chat') {
+      try {
+        const response = await createSession(newChatName);
+        if (response.status === 200) {
+          const newSession = response.data;
+          setChatSessions((prevSessions) => [...prevSessions, newSession]);
+          setSelectedSession(newSession);
+          setHistory([]);
+          console.log('Chat created:', response.data);
+        } else {
+          console.error('Error creating chat:', response.data.message);
+        }
+      } catch (error) {
+        console.error('Error creating chat:', error);
+      }
+    }
+  };
+
+  const handleNonVipCreateNewChat = async () => {
+    if (chatSessions.length > 0) {
+      const deletePromises = chatSessions.map(session => handleDeleteSession(session.sessionId));
+      await Promise.all(deletePromises);
+    }
+    // console.log('create new Chat');
+    await handleCreateNewChat('Chat');
   };
 
   const getHistoryChat = async (sessionId, attempt = 0) => {
@@ -99,11 +139,7 @@ function Main() {
     // console.log('Selected session:', session);
     const chatHistory = await getHistoryChat(session.sessionId);
     // console.log('Chat history:', chatHistory);
-    if (chatHistory) {
-      setHistory(chatHistory);
-    } else {
-      setHistory([]);
-    }
+    setHistory(chatHistory);
   };
 
   const handleDeleteSession = async (sessionId) => {
@@ -129,7 +165,7 @@ function Main() {
     <div className="flex h-screen">
       <Sidebar 
         chatSessions={chatSessions} 
-        onCreateNewChat={handleCreateNewChat} 
+        onCreateNewChat={handleNonVipCreateNewChat} 
         onSelectSession={handleSelectSession}
         selectedSession={selectedSession}
         onDeleteSession={handleDeleteSession}
@@ -139,7 +175,7 @@ function Main() {
           <h2 className={`text-lg font-semibold mb-4 text-center`}>{selectedSession.title}</h2>
         )} */}
         <MainContent 
-          onSendMessage={sendMessage}
+          onSendMessage={handleSendMessage}
           newChatName={newChatName} 
           setChatSessions={setChatSessions} 
           onSelectSession={handleSelectSession}

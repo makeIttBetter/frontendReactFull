@@ -38,9 +38,9 @@ const Sidebar = ({ chatSessions, onCreateNewChat, onSelectSession, selectedSessi
               ))}
             </ul>
           </li>
-          <li className="p-4 hover:bg-gray-700 cursor-pointer">Reports</li>
+          {/* <li className="p-4 hover:bg-gray-700 cursor-pointer">Reports</li>
           <li className="p-4 hover:bg-gray-700 cursor-pointer">Settings</li>
-          <li className="p-4 hover:bg-gray-700 cursor-pointer">Support and Guide</li>
+          <li className="p-4 hover:bg-gray-700 cursor-pointer">Support and Guide</li> */}
         </ul>
         <ThemeToggle />
       </nav>

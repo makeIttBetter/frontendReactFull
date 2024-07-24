@@ -11,7 +11,7 @@
     color: var(--background-text);
   }
 
-  .chat-history p {
+  .chat-history .p {
     color: var(--background-text);
   }
   
@@ -69,7 +69,7 @@
     background-color: var(--primary);
   }
 
-  .user-mesg > p {
+  .user-mesg > .p {
     padding-right: 10px;
   }
 
@@ -77,7 +77,7 @@
     background-color: var(--background);
   }
 
-  .bot-mesg > p {
+  .bot-mesg > .p {
     padding-left: 10px;
   }
   
