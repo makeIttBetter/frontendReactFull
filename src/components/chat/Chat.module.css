@@ -14,6 +14,7 @@
     border: 1px solid var(--secondary);
     border-radius: 5px;
     background-color: var(--surface);
+    color: var(--surface-text);
   }
   
   .chat-input button {

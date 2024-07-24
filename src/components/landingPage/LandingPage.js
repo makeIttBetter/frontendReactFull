@@ -4,6 +4,7 @@ import Header from './header/Header';
 import Footer from './footer/Footer';
 import Landing from './landing/Landing';
 import LearnMore from './learn-more/LearnMore';
+import PrivacyPolicyTermsOfService from './landing/PrivacyPolicyTermsOfService/PrivacyPolicyTermsOfService';
 import styles from './LandingPage.module.css';
 // import './styles/landingStyles.css';
 
@@ -22,6 +23,7 @@ import styles from './LandingPage.module.css';
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/learn-more" element={<LearnMore />} />
+          <Route path="/privacy-policy-terms" element={<PrivacyPolicyTermsOfService />}/>
         </Routes>
         <Footer />
       </div>
