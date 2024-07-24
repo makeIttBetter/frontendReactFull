@@ -11,7 +11,7 @@ const Sidebar = ({ chatSessions, onCreateNewChat, onSelectSession, selectedSessi
         <ul>
           <li>
             <button
-              onClick={onCreateNewChat}
+              onClick={() => onCreateNewChat(null)}
               className="w-full text-left p-2 hover:bg-gray-600"
             >
               + Create New Chat

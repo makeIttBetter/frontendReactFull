@@ -19,11 +19,14 @@ function Main() {
   useEffect(() => {
     // Fetch chat sessions from the backend
     const fetchChatSessions = async () => {
+      console.log('Fetching chat sessions...');
       try {
         const response = await getSessionList();
         if (response && response.data) {
           setChatSessions(response.data);
-          handleSelectSession(response.data[0]);
+          if (response.data.length > 0) {
+            handleSelectSession(response.data[0]);
+          }
         } else {
           setChatSessions([]);
         }
@@ -166,7 +169,7 @@ function Main() {
     <div className="flex h-screen">
       <Sidebar 
         chatSessions={chatSessions} 
-        onCreateNewChat={handleNonVipCreateNewChat} 
+        onCreateNewChat={handleCreateNewChat} 
         onSelectSession={handleSelectSession}
         selectedSession={selectedSession}
         onDeleteSession={handleDeleteSession}
