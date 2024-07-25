@@ -12,11 +12,11 @@
   
   .header.hidden {
     opacity: 0;
-}
+  }
 
-.header.visible {
-    opacity: 1;
-}
+  .header.visible {
+      opacity: 1;
+  }
 
   .container {
     width: 90%;
@@ -51,7 +51,7 @@
   }
   
   .logoHoverEffect:hover {
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Add shadow on hover */
+    text-shadow: 1px 1px 2px rgba(var(--shadow) 0.8); /* Add shadow on hover */
   }
   
   .navLinks {
@@ -82,25 +82,25 @@
     transition: background-color 300ms ease-in-out;
   }
 
-@media (max-width: 768px) {
-    header nav {
-        flex-direction: column;
-    }
+  @media (max-width: 768px) {
+      header nav {
+          flex-direction: column;
+      }
 
-    header ul {
-        flex-direction: column;
-    }
+      header ul {
+          flex-direction: column;
+      }
 
-    header li {
-        margin: 10px 0;
-    }
-}
+      header li {
+          margin: 10px 0;
+      }
+  }
 
-.buttonContainer {
-  display: flex;
-  gap: 10px; /* Adjust the gap as needed */
-}
+  .buttonContainer {
+    display: flex;
+    gap: 10px; /* Adjust the gap as needed */
+  }
 
-.cta:hover {
-  background: var(--btn-hover-color);
-}
+  .cta:hover {
+    background: var(--btn-hover-color);
+  }

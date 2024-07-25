@@ -1,4 +1,4 @@
-.chat-history {
+  .chat-history {
     background-color: var(--background);
     padding: 10px;
     border-radius: 5px;
@@ -13,10 +13,6 @@
 
   .chat-history .p {
     color: var(--background-text);
-  }
-  
-  .message {
-    margin-bottom: 10px;
   }
   
   .chat-header {
@@ -34,6 +30,10 @@
     height: 40px;
     margin-right: 10px;
   }
+  
+  .message {
+    margin-bottom: 10px;
+  }
 
   .main-container-outer {
     max-height: 100vh;
@@ -41,15 +41,15 @@
     background-color: var(--surface);
   }
 
+  .main-container-outer > h2 {
+    color: var(--surface-text);
+  }
+
   .main-container {
     background-color: var(--surface);
     padding-bottom: 5%;
     height: 500%;
     /* overflow: hidden; */
-  }
-
-  .main-container-outer > h2 {
-    color: var(--surface-text);
   }
 
   .history-container {
