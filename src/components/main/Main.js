@@ -16,10 +16,13 @@ function Main() {
   const [newChatName, setNewChatName] = useState('');
   const [selectedSession, setSelectedSession] = useState(null);
 
+  // useEffect(() => {
+  //   console.log('Chat sessions changed:', chatSessions);
+  // }, [chatSessions]);
+
   useEffect(() => {
-    // Fetch chat sessions from the backend
     const fetchChatSessions = async () => {
-      console.log('Fetching chat sessions...');
+      // console.log('Fetching chat sessions...');
       try {
         const response = await getSessionList();
         if (response && response.data) {
@@ -91,10 +94,10 @@ function Main() {
         const response = await createSession(newChatName);
         if (response.status === 200) {
           const newSession = response.data;
-          setChatSessions((prevSessions) => [...prevSessions, newSession]);
+          setChatSessions((prevSessions) => [newSession, ...prevSessions]);
           setSelectedSession(newSession);
           setHistory([]);
-          console.log('Chat created:', response.data);
+          // console.log('Chat List:', chatSessions);
         } else {
           console.error('Error creating chat:', response.data.message);
         }

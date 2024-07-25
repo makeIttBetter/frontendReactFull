@@ -23,9 +23,9 @@ const MainContent = ({ onSendMessage, newChatName, setChatSessions, history, onS
         try {
           const response = await createSession(name);
           if (response.status === 200 && response.data) {
-            setChatSessions((prevSessions) => [...prevSessions, response.data]);
+            setChatSessions((prevSessions) => [response.data, ...prevSessions]);
             onSelectSession(response.data);
-            console.log('Chat created:', response.data);
+            // console.log('Chat created:', response.data);
           } else {
             console.error('Error creating chat:', response.data.message);
           }

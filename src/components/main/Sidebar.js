@@ -27,7 +27,7 @@ const Sidebar = ({ chatSessions, onCreateNewChat, onSelectSession, selectedSessi
                   e.stopPropagation();
                   onDeleteSession(session.sessionId);
                 }}
-                className="ml-2 text-red-600 hover:text-red-800"
+                className="ml-2 text-red-600 transform hover:scale-125 transition duration-200"
               >
                 🗑️
               </button>

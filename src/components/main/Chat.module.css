@@ -27,6 +27,7 @@
     background-color: var(--theme-color);
     color: white;
     cursor: pointer;
+    transition: background-color 300ms ease-in-out;
   }
 
   .chat-input button:hover {

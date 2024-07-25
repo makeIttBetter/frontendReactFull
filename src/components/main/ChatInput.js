@@ -30,7 +30,7 @@ const ChatInput = ({ onSendMessage }) => {
         onKeyDown={handleKeyDown}
         autoFocus
       />
-      <button className={`ml-2 p-2 bg-blue-500 text-white rounded`} onClick={handleSendMessage}>
+      <button className={`ml-2 p-2 text-white rounded`} onClick={handleSendMessage}>
         Send
       </button>
     </div>
