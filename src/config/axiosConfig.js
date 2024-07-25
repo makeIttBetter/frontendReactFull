@@ -3,7 +3,7 @@ import { createBrowserHistory } from 'history';
 
 // Create an Axios instance
 const apiClient = axios.create({
-  baseURL: process.env.REACT_APP_BASE_URL || 'http://localhost:8080',
+  baseURL: process.env.REACT_APP_BASE_URL || 'https://aitravelplannerbackend-production.up.railway.app:8080',
 });
 
 // History object for navigation outside of React components
