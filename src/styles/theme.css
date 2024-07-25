@@ -14,13 +14,6 @@
     --shadow: 255, 255, 255;
     --theme-color: #01579b;
     --grad-color: #0d47a1;
-
-    .search-input{
-      color: #000
-    }
-    .reset-button{
-      color: #000
-    }
   }
 
   .light-mode {
@@ -42,5 +35,6 @@
   }
 
   :root {
-    --constant-text-color: #000; 
+    --constant-text-color: #000;
+    --btn-hover-color: #5ca8b9;
   }

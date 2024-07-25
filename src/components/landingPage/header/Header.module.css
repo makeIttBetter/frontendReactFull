@@ -73,12 +73,13 @@
   }
   
   .cta {
-    background: var(--theme-color);
+    background-color: var(--theme-color);
     padding: 10px 20px;
     border-radius: 5px;
     text-transform: uppercase;
     text-decoration: none;
     color: #fff;
+    transition: background-color 300ms ease-in-out;
   }
 
 @media (max-width: 768px) {
@@ -101,5 +102,5 @@
 }
 
 .cta:hover {
-  background: #5ca8b9;
+  background: var(--btn-hover-color);
 }
