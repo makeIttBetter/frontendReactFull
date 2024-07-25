@@ -149,7 +149,7 @@ function SignUpForm({ styles }) {
           name="name"
           value={state.name}
           onChange={handleChange}
-          placeholder="Name"
+          placeholder="username"
           className={styles.input}
         />
         {errors.name && <span className={styles.error}>{errors.name}</span>}
