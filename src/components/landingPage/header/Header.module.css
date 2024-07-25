@@ -101,5 +101,5 @@
 }
 
 .cta:hover {
-  background: #5ca8b9;
+  background: var(--btn-hover-color);
 }

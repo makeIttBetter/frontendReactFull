@@ -35,5 +35,6 @@
   }
 
   :root {
-    --constant-text-color: #000; 
+    --constant-text-color: #000;
+    --btn-hover-color: #5ca8b9;
   }
