@@ -1,15 +1,15 @@
   .dark-mode {
     --color: #fff;
 
-    --background: #121212; /* Dark mode background */
-    --surface: #1d1d1d; /* Dark mode surface */
-    --primary: #333; /* Dark mode primary */
-    --secondary: #444; /* Dark mode secondary */
+    --background: #121212;
+    --surface: #1d1d1d;
+    --primary: #333;
+    --secondary: #444;
     
-    --background-text: #fff; /* Dark mode background text color */
-    --surface-text: #fff; /* Dark mode surface text color */
-    --primary-text: #fff; /* Dark mode primary text color */
-    --secondary-text: #ddd; /* Dark mode secondary text color */
+    --background-text: #fff;
+    --surface-text: #fff;
+    --primary-text: #fff;
+    --secondary-text: #ddd;
 
     --shadow: 255, 255, 255;
     --theme-color: #01579b;

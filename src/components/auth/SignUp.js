@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import '@fortawesome/fontawesome-free/css/all.css';
+import swal from 'sweetalert';
 
 function SignUpForm({ styles }) {
   const [state, setState] = React.useState({
@@ -82,16 +83,31 @@ function SignUpForm({ styles }) {
       const response = await signUp(name, email, password);
       console.log(response);
       if (response.status === 200) {
-        alert('Sign-up successful\nGo Login Now!');
+        swal ({
+          title: "Sign-up successful",
+          text: "Go Login Now!",
+          icon: "success"
+        });
       } else {
-        alert('Sign-up failed');
+        swal ({
+          title: "Sign-up failed", 
+          icon: "error"
+        });
         console.error('Sign-up failed');
       }
     } catch (error) {
       if (error.response && error.response.status === 409) {
-        alert('User already exists');
+        swal ({
+          title: "User already exists", 
+          text: "Change Your Username & Email and Try Again!", 
+          icon: "error" 
+        });
       } else {
-        alert('Sign-up failed');
+        swal ({
+          title: "Sign-up failed", 
+          text: error.response.data.message,
+          icon: "error"
+        });
         console.error('Error during sign-up:', error);
       }
     }
@@ -133,7 +149,7 @@ function SignUpForm({ styles }) {
           name="name"
           value={state.name}
           onChange={handleChange}
-          placeholder="Name"
+          placeholder="username"
           className={styles.input}
         />
         {errors.name && <span className={styles.error}>{errors.name}</span>}
