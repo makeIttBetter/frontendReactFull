@@ -15,6 +15,9 @@
     --theme-color: #01579b;
     --grad-color: #0d47a1;
 
+    --sidebarbackround: #1d1d1d;
+    --sidebarslider: #333;
+
     .search-input{
       color: #000
     }
@@ -39,6 +42,9 @@
     --shadow: 0, 0, 0;
     --theme-color: #77c9d4;
     --grad-color: #4a90e2;
+
+    --sidebarbackround: #ececec;
+    --sidebarslider: #fff;
   }
 
   .theme-switch {

@@ -17,6 +17,9 @@
     border: 1px solid #ccc; /* Add border */
     border-radius: 8px; /* Add rounded corners */
     padding: 10px; /* Add padding */
+    background-color: var(--surface);
+    position:relative; /* Needed for positioning the pseudo-element */
+    overflow: hidden;
 }
 
 .image-box img {
@@ -30,16 +33,22 @@
     padding-left: 10px; /* Padding between image and description */
     font-size: 24px;
     line-height: 1.5;
+    max-height: 150px; /* Adjust the height as needed */
+    overflow-y: scroll; /* Enable vertical scrolling */
+    position: relative;
+    scrollbar-width: thin;
+    scrollbar-color: var(--sidebarbackround) var(--sidebarslider);
 }
+
+/*.description::-webkit-scrollbar-thumb {
+    background: linear-gradient(#983b3b, #634b4b);
+    border-radius: 8px;
+}*/
 
 .image-box .description {
     margin-top: 10px;
     font-size: 18px;
     line-height: 1.4;
-}
-
-.image-box {
-    background-color: var(--surface);
 }
 
 .scrollable-destination {
@@ -51,10 +60,4 @@
     font-size: 42px;
     padding-top: 20px;
     width: 100%;
-}
-
-.seeMore {
-    text-decoration: underline; /* Underlines the "See More*/
-    cursor: pointer; /* Change cursor pointer to indicate it's clickable*/
-    color: #5ca8b9; /* Change color of the line */
 }
