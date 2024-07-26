@@ -3,10 +3,10 @@ import Sidebar from './Sidebar';
 import MainContent from './MainContent';
 import ChatInput from './ChatInput';
 import {sendChat, getChatHistory, storeChat} from 'api/ChatService';
-import logo from 'assets/logo.png'; // Importer le logo
 import styles from './Main.module.css';
 import {getSessionList, deleteSession, createSession} from 'api/session';
 import ThemeToggle from 'components/guards/ThemeToggle';
+import UserIcon from './userIcon/UserIcon';
 
 const maxAttempts = 2;
 
@@ -179,7 +179,8 @@ function Main() {
       />
       <div className={`${styles['main-container-outer']} flex-1 flex flex-col items-center p-6 ${history.length > 0 ? '' : 'justify-center'}`}>
         <div className={styles.themeToggle}>
-          <ThemeToggle/>
+          <ThemeToggle className='scale-75'/>
+          <UserIcon />
         </div>
         <MainContent 
           onSendMessage={handleSendMessage}
