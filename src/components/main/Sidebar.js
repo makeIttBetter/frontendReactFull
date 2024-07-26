@@ -1,5 +1,6 @@
 import React from 'react';
 import { useAuth } from "components/guards/AuthContext";
+import swal from 'sweetalert';
 
 const Sidebar = ({ chatSessions, onCreateNewChat, onSelectSession, selectedSession, onDeleteSession }) => {
   const { signOut } = useAuth();
@@ -24,8 +25,24 @@ const Sidebar = ({ chatSessions, onCreateNewChat, onSelectSession, selectedSessi
               <span>{session.title}</span>
               <button
                 onClick={(e) => {
-                  e.stopPropagation();
-                  onDeleteSession(session.sessionId);
+                  swal({
+                    title: "Are you sure?",
+                    text: "Once deleted, you can't recover this Conversation!",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                  })
+                  .then((willDelete) => {
+                    if (willDelete) {
+                      e.stopPropagation();
+                      onDeleteSession(session.sessionId);
+                      swal("Your Conversation has been deleted!", {
+                        icon: "success",
+                      });
+                    } else {
+                      swal("Your Conversation is safe!");
+                    }
+                  });
                 }}
                 className="ml-2 text-red-600 transform hover:scale-125 transition duration-200"
               >
