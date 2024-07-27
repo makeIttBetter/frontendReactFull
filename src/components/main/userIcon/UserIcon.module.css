@@ -32,6 +32,15 @@
     width: 150px; /* Adjust width as needed */
     margin-top: 10px; /* Space between icon and dropdown */
     padding: 5px;
+    transform-origin: top;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0;
+    transform: scaleY(0);
+}
+
+.dropdownMenu.show {
+    opacity: 1;
+    transform: scaleY(1);
 }
 
 .dropdownList {

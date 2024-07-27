@@ -31,18 +31,13 @@ const UserIcon = () => {
             <button className={style.iconButton}>
                 <FontAwesomeIcon icon={faUser} className={style.icon} />
             </button>
-            {isOpen && (
-                <div className={style.dropdownMenu}>
-                    <ul className={style.dropdownList}>
-                        <li className={style.dropdownItem}>Profile</li>
-                        <li className={style.dropdownItem}>Settings</li>
-                        <li 
-                            className={style.dropdownItem} 
-                            onClick={signOut}
-                        >Logout</li>
-                    </ul>
-                </div>
-            )}
+            <div className={`${style.dropdownMenu} ${isOpen ? style.show : ''}`}>
+                <ul className={style.dropdownList}>
+                    <li className={style.dropdownItem}>Profile</li>
+                    <li className={style.dropdownItem}>Settings</li>
+                    <li className={style.dropdownItem}>Logout</li>
+                </ul>
+            </div>
         </div>
     );
 };
