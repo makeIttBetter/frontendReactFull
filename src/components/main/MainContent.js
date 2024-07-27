@@ -4,8 +4,9 @@ import logo from 'assets/logo.png'; // Assurez-vous que le chemin d'accès est c
 import styles from './Main.module.css';
 import { useTheme } from 'components/guards/ThemeContext';
 import {createSession} from 'api/session';
+import Loader from './loader/Loader';
 
-const MainContent = ({ onSendMessage, newChatName, setChatSessions, history, onSelectSession }) => {
+const MainContent = ({ onSendMessage, newChatName, setChatSessions, history, onSelectSession, loading }) => {
   const [showPrompts, setShowPrompts] = useState(true);
   const { theme } = useTheme();
   const prompts = [
@@ -92,6 +93,7 @@ const MainContent = ({ onSendMessage, newChatName, setChatSessions, history, onS
               </div>
             ))}
           </div>
+          {loading && <Loader />}
         </>
       )}
     </div>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Sidebar from './Sidebar';
 import MainContent from './MainContent';
 import ChatInput from './ChatInput';
@@ -15,6 +15,8 @@ function Main() {
   const [chatSessions, setChatSessions] = useState([]);
   const [newChatName, setNewChatName] = useState('');
   const [selectedSession, setSelectedSession] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const bottomRef = useRef(null);
 
   // useEffect(() => {
   //   console.log('Chat sessions changed:', chatSessions);
@@ -42,6 +44,13 @@ function Main() {
     fetchChatSessions();
   }, []);
 
+  useEffect(() => {
+    // Scroll to the bottom of the chat when history updates
+    if (bottomRef.current) {
+      bottomRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [history]);
+
   const handleSendMessage = async (message, attempt = 0) => {
     if (attempt >= maxAttempts) {
       console.error('Max attempts reached. Could not send Message.');
@@ -54,7 +63,9 @@ function Main() {
         setTimeout(async () => resolve(await handleSendMessage(message, attempt + 1)), 1000)
       );
     } else {
+      setLoading(true);
       await sendMessage(message);
+      setLoading(false);
     }
   };
 
@@ -62,7 +73,6 @@ function Main() {
     const userMessage = { id: history.length, messageType: 'USER', content: message };
     setHistory((prevHistory) => [...prevHistory, userMessage]);
     let response;
-
     try {
       response = await sendChat(message, selectedSession.sessionId);
       const botResponse = { id: history.length, messageType: 'ASSISTANT', content: response.data };
@@ -188,7 +198,9 @@ function Main() {
           setChatSessions={setChatSessions} 
           onSelectSession={handleSelectSession}
           history={history}
+          loading={loading}
         />
+        <div ref={bottomRef} />
         <ChatInput onSendMessage={handleSendMessage} />
       </div>
     </div>
