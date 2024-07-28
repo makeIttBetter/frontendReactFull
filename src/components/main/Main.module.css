@@ -54,6 +54,7 @@
 
   .history-container {
     background-color: var(--background);
+    border-radius: 2%;
   }
 
   .prompt-card {

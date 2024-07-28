@@ -6,7 +6,13 @@ import { useTheme } from 'components/guards/ThemeContext';
 import {createSession} from 'api/session';
 import Loader from './loader/Loader';
 
-const MainContent = ({ onSendMessage, newChatName, setChatSessions, history, onSelectSession, loading }) => {
+const MainContent = ({ 
+  onSendMessage, 
+  newChatName, 
+  createNewSession,
+  history, 
+  loading 
+}) => {
   const [showPrompts, setShowPrompts] = useState(true);
   const { theme } = useTheme();
   const prompts = [
@@ -20,20 +26,6 @@ const MainContent = ({ onSendMessage, newChatName, setChatSessions, history, onS
 
   useEffect(() => {
     if (newChatName) {
-      const createNewSession = async (name) => {
-        try {
-          const response = await createSession(name);
-          if (response.status === 200 && response.data) {
-            setChatSessions((prevSessions) => [response.data, ...prevSessions]);
-            onSelectSession(response.data);
-            // console.log('Chat created:', response.data);
-          } else {
-            console.error('Error creating chat:', response.data.message);
-          }
-        } catch (error) {
-          console.error('Error creating chat:', error);
-        }
-      };
       createNewSession(newChatName);
     }
   }, [newChatName]);
