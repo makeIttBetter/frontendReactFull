@@ -13,6 +13,7 @@ import Download from '../learn-more/Download';
 import MainSection from '../learn-more/MainSection';
 import GoogleMapsComponent from '../GoogleMaps/GoogleMapsComponent';
 import ScrollableRestaurant from './scrollableRestaurants/ScrollableRestaurant'
+import ScrollableTipsTricks from './scrollableTips&Tricks/ScrollableTips&Tricks'
 
 const Landing = () => {
   const navigate = useNavigate();
@@ -35,6 +36,7 @@ const Landing = () => {
       {/*<MainSection styles={styles} />*/}
       <ScrollableDestination styles={styles} />
       {/*<MapSection />*/}
+      <ScrollableTipsTricks styles={styles}/>
       <ScrollableRestaurant styles={styles} />
       <GoogleMapsComponent />
       <Testimonials styles={styles} />
