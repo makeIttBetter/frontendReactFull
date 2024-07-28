@@ -1,9 +1,9 @@
 import React from 'react';
-import featureIcon1 from 'assets/features/Feature-1.png';
-import featureIcon2 from 'assets/features/Feature-2.png';
-import featureIcon3 from 'assets/features/Feature-3.png';
-import featureIcon4 from 'assets/features/Feature-4.png';
-import featureIcon5 from 'assets/features/Feature-5.png';
+import featureIcon1 from 'assets/features/AI-chat.jpg';
+import featureIcon2 from 'assets/features/clock.jpg';
+import featureIcon3 from 'assets/features/navigation.jpg';
+import featureIcon4 from 'assets/features/map Itinerary.jpg';
+import featureIcon5 from 'assets/features/currency.png';
 import styles from './Feature.module.css'; // Ensure correct import path
 
 const Features = () => {
@@ -23,7 +23,7 @@ const Features = () => {
             <img src={featureIcon2} alt="Feature 2" />
             <div className={styles.description}>
               <strong>Real-Time Updates</strong><br />
-              Get real-time updates on events and locations during your trip.
+              Get real-time updates on weather and locations during your trip.
             </div>
           </div>
           <div className={styles['image-box']}>
