@@ -2,9 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import Sidebar from './Sidebar';
 import MainContent from './MainContent';
 import ChatInput from './chat/ChatInput';
-import {sendChat, getChatHistory, storeChat} from 'api/ChatService';
+import {sendChat, getChatHistory } from 'api/ChatService';
 import styles from './Main.module.css';
-import {getSessionList, deleteSession, createSession} from 'api/session';
+import {getSessionList, deleteSession, createSession, updateSession} from 'api/session';
 import ThemeToggle from 'components/guards/ThemeToggle';
 import UserIcon from './userIcon/UserIcon';
 
@@ -13,7 +13,6 @@ const maxAttempts = 3;
 function Main() {
   const [history, setHistory] = useState([]);
   const [chatSessions, setChatSessions] = useState([]);
-  const [newChatName, setNewChatName] = useState('');
   const [selectedSession, setSelectedSession] = useState(null);
   const [loading, setLoading] = useState(false);
   const bottomRef = useRef(null);
@@ -22,6 +21,7 @@ function Main() {
   //   console.log('Chat sessions changed:', chatSessions);
   // }, [chatSessions]);
 
+  // fetch chat sessions on component mount
   useEffect(() => {
     const fetchChatSessions = async () => {
       // console.log('Fetching chat sessions...');
@@ -44,17 +44,104 @@ function Main() {
     fetchChatSessions();
   }, []);
 
+  // Scroll to the bottom of the chat when history updates
   useEffect(() => {
-    // Scroll to the bottom of the chat when history updates
     if (bottomRef.current) {
       bottomRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   }, [history]);
+  
+  /**
+   * Creating a new chat session and remove the previous fake session.
+   * 
+   * @param {string} name - The name of the chat session to be created 
+   * @returns {} The new chat session, or null if the session could not be created
+   */
+  const createNewSession = async (name) => {
+    try {
+      const response = await createSession(name);
+      if (response.status === 200 && response.data) {
+        // console.log('Chat created:', response.data);
+        setChatSessions((prevSessions) => [
+          response.data, ...prevSessions.filter(session => 
+            selectedSession === null 
+              ? typeof session.sessionId !== 'number' 
+              : session.sessionId !== selectedSession.sessionId
+          )
+        ]);
+        setSelectedSession(response.data);
+        setHistory([]);
+        return response.data;
+        // console.log('Chat created:', response.data);
+      } else {
+        console.error('Error creating chat:', response.data.message);
+        return null;
+      }
+    } catch (error) {
+      console.error('Error creating chat:', error);
+      return null;
+    }
+  };
 
+  /**
+   * Handle creating a new fake chat session and set state.
+   * 
+   * @param {string} name - The name of the chat session to be created 
+   * @returns {} The fake chat session, or real new session if Not VIP
+   */
+  const handleCreateNewChat = async (name) => {
+
+    const newChat = name || `Chat ${chatSessions.length + 1}`;
+    const newSession = { sessionId: chatSessions.length, title: newChat };
+    setChatSessions((prevSessions) => [newSession, ...prevSessions]);
+    setSelectedSession(newSession);
+    setHistory([]);
+
+    if (newChat === 'Chat') {
+      try {
+        const response = await createSession(newChat);
+        if (response.status === 200) {
+          newSession = response.data;
+          setChatSessions((prevSessions) => [newSession, ...prevSessions]);
+          setSelectedSession(newSession);
+          setHistory([]);
+          console.log(selectedSession);
+          // console.log('Chat List:', chatSessions);
+        } else {
+          console.error('Error creating chat:', response.data.message);
+        }
+      } catch (error) {
+        console.error('Error creating chat:', error);
+      }
+    }
+
+    return newSession;
+  };
+
+  /**
+   * Handle creating a new chat session and set state for non-VIP users.
+   */
+  const handleNonVipCreateNewChat = async () => {
+    if (chatSessions.length > 0) {
+      const deletePromises = chatSessions.map(session => handleDeleteSession(session.sessionId));
+      await Promise.all(deletePromises);
+    }
+    // console.log('create new Chat');
+    await handleCreateNewChat('Chat');
+  };
+
+  /**
+   * Handle sending a message to the chatbot and updating the chat history.
+   * If the selected session is null, a new chat session is created.
+   * 
+   * @param {string} message - The message to be sent 
+   * @param {number} attempt - The number of attempts made to send the message 
+   * @returns 
+   */
   const handleSendMessage = async (message, attempt = 0) => {
     if (attempt >= maxAttempts) {
       console.error('Max attempts reached. Could not send Message.');
-      return null;
+      return;
     }
 
     let session;
@@ -75,9 +162,17 @@ function Main() {
     }
   };
 
+  /**
+   * Send a message to the chatbot and update the chat history.
+   * If the session ID is a number, a new chat session is created and replace the fake one.
+   * 
+   * @param {string} message - The message to be sent 
+   * @param {Object} session - The chat session to send the message to 
+   * @returns 
+   */
   const sendMessage = async (message, session) => {
-    console.log('Session:', session);
-    console.log('SessionID:', session.sessionId);
+    // console.log('Session:', session);
+    // console.log('SessionID:', session.sessionId);
 
     if (typeof session.sessionId === 'number') {
       session = await createNewSession(session.title);
@@ -101,57 +196,69 @@ function Main() {
     }
   };
 
-    // try {
-    //   await storeChat(selectedSession.sessionId, message, 'USER');
-    // } catch (error) {
-    //   console.error(`Error storing user message:`, error);
-    // }
+  /**
+   * Handle deleting a chat session and its chat history.
+   * 
+   * @param {string} sessionId - The ID of the chat session to be deleted
+   */
+  const handleDeleteSession = async (sessionId) => {
+    try {
+      const response = await deleteSession(sessionId);
 
-    // try {
-    //   await storeChat(selectedSession.sessionId, response.data, 'ASSISTANT');
-    // } catch (error) {
-    //   console.error(`Error storing Flomad message:`, error);
-    // }
-  // };
-
-  const handleCreateNewChat = async (name) => {
-
-    const newChat = name || `Chat ${chatSessions.length + 1}`;
-    const newSession = { sessionId: chatSessions.length, title: newChat };
-    setChatSessions((prevSessions) => [newSession, ...prevSessions]);
-    setSelectedSession(newSession);
-    setHistory([]);
-
-    if (newChat === 'Chat') {
-      try {
-        const response = await createSession(newChatName);
-        if (response.status === 200) {
-          const newSession = response.data;
-          setChatSessions((prevSessions) => [newSession, ...prevSessions]);
-          setSelectedSession(newSession);
-          setHistory([]);
-          console.log(selectedSession);
-          // console.log('Chat List:', chatSessions);
-        } else {
-          console.error('Error creating chat:', response.data.message);
+      if (response.status === 204) {
+        // console.log('Session deleted:', sessionId);
+        setChatSessions((prevSessions) => prevSessions.filter(session => session.sessionId !== sessionId));
+        if (selectedSession && selectedSession.sessionId === sessionId) {
+          handleSelectSession(chatSessions[1] || null);
         }
-      } catch (error) {
-        console.error('Error creating chat:', error);
+      } else {
+        console.log('Session fail:', sessionId);
       }
+    } catch (error) {
+      console.error('Error deleting session:', error);
     }
-
-    return newSession;
   };
 
-  const handleNonVipCreateNewChat = async () => {
-    if (chatSessions.length > 0) {
-      const deletePromises = chatSessions.map(session => handleDeleteSession(session.sessionId));
-      await Promise.all(deletePromises);
+
+  const handleUpdateSession = async (sessionId, title) => {
+    try {
+      const response = await updateSession(sessionId, title);
+      if (response.status === 200) {
+        console.log('Session updated:', response.data);
+        setChatSessions((prevSessions) => prevSessions.map(session => 
+          session.sessionId === sessionId ? response.data : session
+        ));
+      } else {
+        console.error('Error updating session:', response.data.message);
+      }
+    } catch (error) {
+      console.error('Error updating session:', error);
     }
-    // console.log('create new Chat');
-    await handleCreateNewChat('Chat');
   };
 
+  /**
+   * Select a chat session and load its chat history.
+   * 
+   * @param {Object|null} session - The chat session to be selected, or null to clear selection.
+   */
+  const handleSelectSession = async (session) => {
+    if (session) {
+      setSelectedSession(session);
+      const chatHistory = await getHistoryChat(session.sessionId);
+      setHistory(chatHistory);
+    } else {
+      setSelectedSession(null);
+      setHistory([]);
+    }
+  };
+
+  /**
+   * Get chat history for a chat session.
+   * 
+   * @param {string} sessionId - The ID of the chat session to retrieve chat history for
+   * @param {number} attempt - The number of attempts made to retrieve chat history 
+   * @returns {} The chat history for the session, or null if the history could not be retrieved
+   */
   const getHistoryChat = async (sessionId, attempt = 0) => {
     if (attempt >= maxAttempts) {
       console.error('Max attempts reached. Could not retrieve chat history.');
@@ -177,53 +284,6 @@ function Main() {
     }
   };
 
-  const handleSelectSession = async (session) => {
-    setSelectedSession(session);
-    // console.log('Selected session:', session);
-    const chatHistory = await getHistoryChat(session.sessionId);
-    // console.log('Chat history:', chatHistory);
-    setHistory(chatHistory);
-  };
-
-  const handleDeleteSession = async (sessionId) => {
-    try {
-      const response = await deleteSession(sessionId);
-
-      if (response.status === 204) {
-        console.log('Session deleted:', sessionId);
-        setChatSessions((prevSessions) => prevSessions.filter(session => session.sessionId !== sessionId));
-        if (selectedSession && selectedSession.sessionId === sessionId) {
-          setSelectedSession(null);
-          setHistory([]);
-        }
-      } else {
-        console.log('Session fail:', sessionId);
-      }
-    } catch (error) {
-      console.error('Error deleting session:', error);
-    }
-  };
-
-  const createNewSession = async (name) => {
-    try {
-      const response = await createSession(name);
-      if (response.status === 200 && response.data) {
-        console.log('Chat created:', response.data);
-        setChatSessions((prevSessions) => [response.data, ...prevSessions.filter(session => typeof session.sessionId !== 'number')]);
-        setSelectedSession(response.data);
-        setHistory([]);
-        return response.data;
-        // console.log('Chat created:', response.data);
-      } else {
-        console.error('Error creating chat:', response.data.message);
-        return null;
-      }
-    } catch (error) {
-      console.error('Error creating chat:', error);
-      return null;
-    }
-  };
-
   return (
     <div className="flex h-screen">
       <Sidebar 
@@ -232,6 +292,7 @@ function Main() {
         onSelectSession={handleSelectSession}
         selectedSession={selectedSession}
         onDeleteSession={handleDeleteSession}
+        onUpdateSession={handleUpdateSession}
       />
       <div className={`${styles['main-container-outer']} flex-1 flex flex-col items-center p-6 ${history.length > 0 ? '' : 'justify-center'}`}>
         <div className={styles.themeToggle}>

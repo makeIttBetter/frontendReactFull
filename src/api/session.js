@@ -31,3 +31,15 @@ export const deleteSession = async (sessionId) => {
     throw error;
   }
 }
+
+export const updateSession = async (sessionId, title) => {
+  try {
+    const response = await apiClient.put(`/sessions/${sessionId}`, {
+      title
+    });
+    // console.log('updateSession:', response);
+    return response;
+  } catch (error) {
+    throw error;
+  }
+}
