@@ -3,7 +3,7 @@ import { createBrowserHistory } from 'history';
 
 // Create an Axios instance
 const apiClient = axios.create({
-  baseURL: process.env.REACT_APP_BASE_URL || 'http://localhost:8080',
+  baseURL: process.env.REACT_APP_BASE_URL || 'https://aitravelplannerbackend-production.up.railway.app/',
 });
 
 // History object for navigation outside of React components
@@ -18,13 +18,12 @@ apiClient.interceptors.request.use(
       if (
         !config.url.includes('/auth/signup') && 
         !config.url.includes('/auth/login') &&
-        !config.url.includes('/learn-more') &&
-        !config.url.includes('/')
+        !config.url.includes('/learn-more')
       ) {
         config.headers.Authorization = `Bearer ${token}`;
       }
     }
-    console.log('Request config:', config);  // Log the request configuration
+    // console.log('Request config:', config);  // Log the request configuration
     return config;
   },
   (error) => {

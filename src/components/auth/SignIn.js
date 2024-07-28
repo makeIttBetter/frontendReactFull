@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { SignIn } from "api/auth";
 import '@fortawesome/fontawesome-free/css/all.css';
+import swal from 'sweetalert';
 
 function SignInForm({ styles }) {
   const [state, setState] = React.useState({
@@ -42,11 +43,18 @@ function SignInForm({ styles }) {
         // Navigate to main page upon successful sign-up
         navigate('/main');
       } else {
-        alert('Sign-In failed')
+        swal ({
+          title: "Sign-In failed", 
+          icon: "error"
+        });
         console.error('Sign-In failed');
       }
     } catch (error) {
-      alert(error.response.data.message)
+      swal ({
+        title: "Sign-In failed",
+        text: error.response.data.message,
+        icon: "error"
+      });
       console.error('Error during sign-In:', error);
     }
     // signIn();
