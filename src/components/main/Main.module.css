@@ -54,6 +54,7 @@
 
   .history-container {
     background-color: var(--background);
+    border-radius: 2%;
   }
 
   .prompt-card {
@@ -84,9 +85,18 @@
 
   .themeToggle {
     padding: 10px;
-    cursor: pointer;
     z-index: 1000;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
     /* Using Tailwind classes via @apply */
     @apply fixed top-5 right-5;
   }
+
+  /* .themeToggle>svg {
+    transform: scale(1.5);
+    padding: 5px;
+    cursor: pointer;
+    padding: 20px;
+  } */
   

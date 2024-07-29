@@ -101,6 +101,15 @@
     gap: 10px; /* Adjust the gap as needed */
   }
 
+  .buttonContainer>a {
+    margin-top: 5px;
+    height: 50%;
+  }
+
+  .buttonContainer>div {
+    @apply scale-75;
+  }
+
   .cta:hover {
     background: var(--btn-hover-color);
   }

@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { signUp } from "api/auth";
-import { useAuth } from "components/guards/AuthContext";
-import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import '@fortawesome/fontawesome-free/css/all.css';

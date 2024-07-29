@@ -44,3 +44,7 @@
     --constant-text-color: #000;
     --btn-hover-color: #5ca8b9;
   }
+
+  div{
+    transition: background-color 300ms ease, color 300ms ease;
+  }
