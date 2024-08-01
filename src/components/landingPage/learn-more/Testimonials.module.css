@@ -1,17 +1,18 @@
 .testimonialsSection {
-    padding-top: 80px;
-    padding-bottom: 150px;
+  padding-top: 80px;
+  padding-bottom: 150px;
   }
   
   .testimonialsContainer {
     max-width: 1200px;
+    width: 75%;
     margin: 0 auto;
   }
 
   .testimonialsTitle {
     text-align: center;
     margin-bottom: 120px;
-    font-size: 42px;
+    font-size: 32px;
   }
 
   .container {
@@ -20,15 +21,15 @@
     position: relative;
   }
   
-  .blockquote {
+  /*.blockquote {
     background-color: var(--primary); /* Uses the global variable */
-    color: var(--primary-text); /* Uses the global variable */
+    /*color: var(--primary-text); /* Uses the global variable */
     /*background-color: white;*/
-    padding: 40px;
+    /*padding: 40px;
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-  }
+  }*/
   
   .p {
     font-size: 24px;
@@ -90,23 +91,35 @@
 }
 
 .leftBox.active {
-  transform: translateY(calc(-100% + 50px)) rotate(0deg); /* Adjust as needed */
+  transform: translateY(calc(-100% + 150px)) rotate(0deg); /* Adjust as needed 50px */
 }
 
 .rightBox.active {
-  transform: translateY(calc(-100% + 50px)) rotate(0deg); /* Adjust as needed */
+  transform: translateY(calc(-100% + 150px)) rotate(0deg); /* Adjust as needed */
 }
 
 .leftBoxBottom.active {
-  transform: translateY(calc(50% + 50px)) rotate(0deg); /* Adjust as needed */
+  transform: translateY(calc(50% + 150px)) rotate(0deg); /* Adjust as needed */
 }
 
 .rightBoxBottom.active {
-  transform: translateY(calc(50% + 50px)) rotate(0deg); /* Adjust as needed */
+  transform: translateY(calc(50% + 150px)) rotate(0deg); /* Adjust as needed */
 }
 
 .centerBox {
-  margin: 50px auto 0 auto; /* Adjust the top margin as needed */
+  margin: 230px auto 0 auto; /* Adjust the top margin as needed 50px*/
   width: 35%;
   z-index: 2;
+}
+
+@media (min-width: 768px) {
+  .testimonialsTitle {
+    font-size: 32px;
+    margin-bottom: 120px;
+  }
+
+  .blockquote {
+    padding: 40px;
+    font-size: 24px;
+  }
 }

@@ -13,8 +13,8 @@
   .hero {
     display: grid;
     place-items: center;
-    width: 100%;
-    max-width: 1450px; /*1200px*/
+    width: 75%;
+    /*max-width: 1450px; /*1200px*/
     margin-bottom: 0px;
     justify-content: center;
     align-items: center;
@@ -26,14 +26,15 @@
     color: #fff;
     padding: 0px;
     box-sizing: border-box;
-    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out; /* Smooth transition for transform and filter */
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition for transform and filter */
     padding: 10px; /* Add padding */
-    aspect-ratio: 19.5/9 /*16/9*/
+    aspect-ratio: 2/1 /*16/9*/
   }
   
   .hero:hover {
     transform: scale(1.02); /* Slightly enlarge the background image */
     filter: brightness(1.1); /* Make the background image slightly brighter */
+    box-shadow: 0 50px 200px rgba(17, 109, 189, 0.2)
   }
   
   .hero-content {

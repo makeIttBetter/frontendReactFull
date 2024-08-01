@@ -6,6 +6,40 @@ import Dolce from 'assets/restaurants/Dolce.jpg';
 import AescherBerggasthaus from 'assets/restaurants/AescherBerggasthaus.jpg';
 import styles from './ScrollableRestaurant.module.css';
 
+const destinations = [
+  { image: LePetitCardinal, alt: "LePetitCardinal", title: "Le Petit Cardinal", subtitle: "Paris, France" },
+  { image: BoraBoraYachtClub, alt: "BoraBoraYachtClub", title: "Bora Bora Yacht Club", subtitle: "Bora Bora, French Polynesia"},
+  { image: SunFlowerCaffeeandBBQ, alt: "SunFlowerCaffeeandBBQ", title: "Sun Flower Caffe and BBQ", subtitle:"West Glacier, USA" },
+  { image: Dolce, alt: "Dolce", title: "Dolce" , subtitle:"Rome, Italy"},
+  { image: AescherBerggasthaus, alt: "AescherBerggasthaus", title: "Aescher Berggasthaus", subtitle: "Swiss Alps, Switzerland"}
+];
+
+const ScrollableDestination = () => {
+  return (
+    <section id="scrollable-destination" className={styles['scrollable-destination']}>
+      <div className={styles.container}>
+        <h2 className={styles.heading}>Popular Travel Destinations</h2>
+        <div className={styles['image-container']}>
+          {destinations.map((destination, index) => (
+            <div
+              key={index}
+              className={styles['card']}
+              style={{ backgroundImage: `url(${destination.image})` }}
+            >
+              <div className={styles['card-info']}>
+                <div className={styles['card-title']}>{destination.title}</div>
+                <div className={styles['card-subtitle']}>{destination.subtitle}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ScrollableDestination;
+/*
 const ScrollableDestination = () => {
   return (
     <section id="scrollable-destination" className={`${styles['scrollable-destination']} ${styles['flex-container']}`}>
@@ -54,3 +88,4 @@ const ScrollableDestination = () => {
 };
 
 export default ScrollableDestination;   
+*/
