@@ -18,7 +18,7 @@ const ScrollableDestination = () => {
   return (
     <section id="scrollable-destination" className={styles['scrollable-destination']}>
       <div className={styles.container}>
-        <h2 className={styles.heading}>Popular Travel Destinations</h2>
+        <h2 className={styles.heading}>Gourmet Destinations</h2>
         <div className={styles['image-container']}>
           {destinations.map((destination, index) => (
             <div
