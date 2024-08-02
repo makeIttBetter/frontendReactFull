@@ -112,7 +112,7 @@
   z-index: 2;
 }
 
-@media (min-width: 768px) {
+/*@media (min-width: 768px) {
   .testimonialsTitle {
     font-size: 32px;
     margin-bottom: 120px;
@@ -122,4 +122,26 @@
     padding: 40px;
     font-size: 24px;
   }
+}*/
+
+  /* Media Query for smaller screens */
+@media (max-width: 576px) {
+  .testimonialsTitle {
+    text-align: center;
+    margin-bottom: 80px;
+    font-size: 22px;
+  }
+
+  .p {
+    font-size: 12px;
+  }
+
+  .blockquote {
+    padding: 20px;
+  }
+
+  .testimonialsSection {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    }
 }
