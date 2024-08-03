@@ -288,3 +288,80 @@
   right: 10px;
   cursor: pointer;
 }
+
+@media (max-width: 576px) {
+  .body-sign .container {
+    max-width: 500px;
+    width: 100%;
+  }
+
+  .body-sign .logo {
+    width: 5%;
+    margin-left: 30%;
+    margin-right: 5%;
+  }
+
+  .body-sign h2 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 5px;
+  }
+  
+  .body-sign p {
+    font-size: 12px;
+    letter-spacing: 0.5px;
+  }
+  
+  .body-sign span {
+    font-size: 10px;
+  }
+  
+  .body-sign a {
+    font-size: 12px;
+    margin: 13px 0;
+  }
+
+  .body-sign button {
+    border-radius: 10px;
+    border: 1px solid var(--theme-color);
+    font-size: 10px;
+    padding: 10px 43px;
+    letter-spacing: 1px;
+  }
+  
+  .body-sign form {
+    padding: 0 20px;
+  }
+  
+  .body-sign input {
+    padding: 8px 10px;
+    margin: 6px 0;
+  }
+
+  .body-sign .overlay-panel {
+    padding: 0 10px;
+  }
+
+  .body-sign .social-container {
+    margin: 10px 0;
+  }
+  
+  .body-sign .social-container a {
+    margin: 0 0px;
+    height: 30px;
+    width: 30px;
+  }
+  
+  .body-sign footer {
+    font-size: 12px;
+  }
+  
+  .body-sign footer p {
+    margin: 8px 0;
+  }
+  
+  .toggle-icon {
+    right: 8px;
+  }
+}
