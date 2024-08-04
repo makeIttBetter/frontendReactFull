@@ -1,13 +1,13 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { scroller } from 'react-scroll';
 import Hero from './hero/Hero';
 import MapSection from './mapSection/MapSection';
 import ScrollableDestination from './scrollableDestination/ScrollableDestination';
 import About from './about/About';
 import Contact from './contact/Contact';
 import styles from './Landing.module.css';
-import { useNavigate, useLocation } from 'react-router-dom';
-import { scroller } from 'react-scroll';
-import Features from '../learn-more/Feature';
+import Features from './scrollableFeatures/Feature';
 import Testimonials from '../learn-more/Testimonials';
 import Download from '../learn-more/Download';
 import MainSection from '../learn-more/MainSection';
@@ -36,7 +36,7 @@ const Landing = () => {
       {/*<MainSection styles={styles} />*/}
       <ScrollableDestination styles={styles} />
       {/*<MapSection />*/}
-      <ScrollableTipsTricks styles={styles}/>
+      {/*<ScrollableTipsTricks styles={styles}/>*/}
       <ScrollableRestaurant styles={styles} />
       <GoogleMapsComponent />
       <Testimonials styles={styles} />

@@ -1,14 +1,26 @@
 .about {
     padding-top: 250px;/*padding: 50px 0*/
     text-align: center;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .about h2 {
     margin-bottom: 20px;
-    font-size: 24px;
+    font-size: 32px;
 }
 
 .about p {
     margin-bottom: 20px;
 }
+
+/* Media Query for smaller screens */
+@media (max-width: 576px) {
+    .about h2 {
+        font-size: 22px;
+    }
+
+    .about p {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+  }

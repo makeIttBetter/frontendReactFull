@@ -5,10 +5,12 @@
 
 .contact h2 {
     margin-bottom: 20px;
+    font-size: 32px; /* Default font size */
 }
 
 .contact p {
     margin-bottom: 20px;
+    font-size: 16px; /* Default font size */
 }
 
 .contact input, textarea {
@@ -30,9 +32,27 @@
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    font-size: 16px;
 }
 
 .contact form button:hover { /* Add hover effect */
     background-color: #5ca8b9; /* New background color on hover */
     transition: background-color 0.3s ease; /* Add transition for smooth effect */
+  }
+
+.contact form input::placeholder, 
+.contact form textarea::placeholder {
+    font-size: 16px; /* Set your desired font size */
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 576px) {
+    .contact h2 {
+        font-size: 22px; /* Adjust font size for smaller screens */
+      }
+
+      .contact {
+        padding: 50px 10vw;
+        text-align: center;
+    }
   }
