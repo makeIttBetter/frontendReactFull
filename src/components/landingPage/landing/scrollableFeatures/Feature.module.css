@@ -1,11 +1,11 @@
 .scrollable-destination {
-  padding: 0 13vw;
+  padding: 0 13vw; /*5vw*/
 }
 
 .scrollable-destination .heading {
   padding-left: 20px;
   font-size: 32px;
-  padding-top: 60px;
+  padding-top: 20px;
   width: 100%;
 }
 
