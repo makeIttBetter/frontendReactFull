@@ -35,7 +35,7 @@ const UserIcon = () => {
                 <ul className={style.dropdownList}>
                     <li className={style.dropdownItem}>Profile</li>
                     <li className={style.dropdownItem}>Settings</li>
-                    <li className={style.dropdownItem}>Logout</li>
+                    <li className={style.dropdownItem} onClick={signOut}>Logout</li>
                 </ul>
             </div>
         </div>
