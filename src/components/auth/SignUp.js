@@ -44,9 +44,8 @@ function SignUpForm({ styles }) {
       hasSpecialChar
     );
 
-    console.log(password.length >= minLength, hasUpperCase, hasLowerCase, hasDigit, hasSpecialChar, isComplex);
-
     const passwordsMatch = password === confirmPassword;
+    console.log(password.length >= minLength, hasUpperCase, hasLowerCase, hasDigit, hasSpecialChar, isComplex, passwordsMatch);
 
     setErrors((prevErrors) => ({
       ...prevErrors,
@@ -83,7 +82,7 @@ function SignUpForm({ styles }) {
       if (response.status === 200) {
         swal ({
           title: "Sign-up successful",
-          text: "Go Login Now!",
+          text: "Go Check Your Email!",
           icon: "success"
         });
       } else {
@@ -147,6 +146,7 @@ function SignUpForm({ styles }) {
           name="name"
           value={state.name}
           onChange={handleChange}
+          onBlur={handleChange}
           placeholder="username"
           className={styles.input}
         />
@@ -156,6 +156,7 @@ function SignUpForm({ styles }) {
           name="email"
           value={state.email}
           onChange={handleChange}
+          onBlur={handleChange}
           placeholder="Email"
           className={styles.input}
         />
@@ -166,6 +167,7 @@ function SignUpForm({ styles }) {
             name="password"
             value={state.password}
             onChange={handleChange}
+            onBlur={handleChange}
             placeholder="Password"
             className={`${styles.input} ${styles['password-input']}`}
           />
@@ -182,6 +184,7 @@ function SignUpForm({ styles }) {
             name="confirmPassword"
             value={state.confirmPassword}
             onChange={handleChange}
+            onBlur={handleChange}
             placeholder="Confirm Password"
             className={`${styles.input} ${styles['password-input']}`}
           />

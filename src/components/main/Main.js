@@ -189,8 +189,10 @@ function Main() {
 
     try {
       response = await sendChat(message, session.sessionId);
-      const botResponse = { id: history.length, messageType: 'ASSISTANT', content: response.data };
-      setHistory((prevHistory) => [...prevHistory, botResponse]);
+      if (session.sessionId === (selectedSession ? selectedSession.sessionId : null)) {
+        const botResponse = { id: history.length, messageType: 'ASSISTANT', content: response.data };
+        setHistory((prevHistory) => [...prevHistory, botResponse]);
+      }
     } catch (error) {
       console.error(`Error sending message:`, error);
     }
