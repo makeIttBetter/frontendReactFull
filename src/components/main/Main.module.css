@@ -139,7 +139,13 @@
       border-radius: 4px; /* Adjust border radius for smaller screens */
     }
   
+    .prompt {
+      color: var(--surface-text);
+      font-size: small;
+    }
+
     .prompt-card {
+      padding: 10px;
       box-shadow: 0 2px 4px rgba(var(--shadow), 0.1); /* Reduce shadow for small screens */
     }
   
