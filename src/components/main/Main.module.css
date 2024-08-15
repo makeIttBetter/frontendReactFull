@@ -100,3 +100,53 @@
     padding: 20px;
   } */
   
+  @media (max-width: 576px) {
+    .chat-history {
+      padding: 5px;
+      box-shadow: none; /* Optional: remove shadow for smaller screens */
+      max-width: 100%;
+    }
+  
+    .chat-history h2, .chat-history .p {
+      font-size: 12px; /* Adjust font size for better readability */
+    }
+    
+    .chat-header {
+      flex-direction: column; /* Stack header content vertically on small screens */
+      align-items: flex-start; /* Align items to the start for better fit */
+      margin-bottom: 10px;
+    }
+
+    .chat-header img {
+      height: 30px;
+      margin-right: 5px;
+    }
+  
+    .chat-header h1 {
+      font-size: 18px; /* Adjust font size for smaller screens */
+    }
+    
+    .main-container-outer {
+      padding: 0 5px; /* Add some padding for small screens */
+    }
+  
+    .main-container {
+      height: auto; /* Adjust height to fit content */
+      padding-bottom: 10%; /* Increase bottom padding for better spacing */
+    }
+  
+    .history-container {
+      border-radius: 4px; /* Adjust border radius for smaller screens */
+    }
+  
+    .prompt-card {
+      box-shadow: 0 2px 4px rgba(var(--shadow), 0.1); /* Reduce shadow for small screens */
+    }
+  
+    .themeToggle {
+      padding: 2px;
+      gap: 5px; /* Reduce gap between items */
+      @apply top-2 right-2; /* Adjust position for smaller screens */
+    }
+  }
+  

@@ -63,3 +63,27 @@
     box-shadow: 0 5px 20px rgba(var(--shadow), 0.2);
     transition: box-shadow 300ms ease-in-out;
 }
+
+@media (max-width: 576px) {
+    .wrapper {
+      height: 46px;
+      width: 46px;
+      font-size: 12px; /* Adjust font size if needed */
+    }
+  
+    .icon {
+      transform: scale(1.2); /* Scale down the icon for smaller screens */
+    }
+  
+    .dropdownMenu {
+      width: 100px; /* Adjust width for smaller screens */
+      margin-top: 8px; /* Reduce space between icon and dropdown */
+      padding: 4px; /* Reduce padding */
+    }
+  
+    .dropdownItem {
+      padding: 8px 15px; /* Adjust padding for smaller screens */
+      font-size: 12px; /* Adjust font size for better readability */
+    }
+  }
+  

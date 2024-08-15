@@ -5,3 +5,11 @@
     width: 100%;
     margin: 10px 0;
 }
+
+@media (max-width: 768px) {
+    .loader-container {
+      width: 80%;
+      margin: 2.5px 0;
+      padding: 5px;
+    }
+  }
