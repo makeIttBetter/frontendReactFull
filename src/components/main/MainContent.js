@@ -5,6 +5,8 @@ import styles from './Main.module.css';
 import { useTheme } from 'components/guards/ThemeContext';
 import {createSession} from 'api/session';
 import Loader from './loader/Loader';
+import FlightOffers from 'components/flight-offers/FlightOffers';
+import Reference from 'components/reference/Reference';
 
 const MainContent = ({ 
   onSendMessage, 
@@ -68,6 +70,11 @@ const MainContent = ({
           <div className={`${styles['chat-header']} flex items-center mb-4`}>
             <img src={logo} alt="Flomad Logo" className="h-8 mr-2" />
             <h1 className="text-2xl font-bold">Flomad</h1>
+          </div>
+          <div>
+            <Reference></Reference>
+            <p><b><center>Book A Flight</center></b></p>
+            <FlightOffers></FlightOffers>
           </div>
           <div className={`${styles['chat-history']} bg-white p-4 rounded-lg shadow-md w-full max-w-2xl`}>
             {/* <h2 className="text-lg font-semibold mb-4 text-center">Chat History</h2> */}
