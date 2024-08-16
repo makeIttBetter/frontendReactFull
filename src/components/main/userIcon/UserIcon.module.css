@@ -66,8 +66,8 @@
 
 @media (max-width: 576px) {
     .wrapper {
-      height: 46px;
-      width: 46px;
+      height: 40px;
+      width: 40px;
       font-size: 12px; /* Adjust font size if needed */
     }
   
