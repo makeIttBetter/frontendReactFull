@@ -10,8 +10,6 @@ import Reference from 'components/reference/Reference';
 
 const MainContent = ({ 
   onSendMessage, 
-  newChatName, 
-  createNewSession,
   history, 
   loading 
 }) => {
@@ -25,12 +23,6 @@ const MainContent = ({
     "What are the must-try foods in Barcelona?",
     "I have 2000 dollars how much in moroccan currency ?",
   ];
-
-  useEffect(() => {
-    if (newChatName) {
-      createNewSession(newChatName);
-    }
-  }, [newChatName]);
 
   useEffect(() => {
     // console.log('History:', history);

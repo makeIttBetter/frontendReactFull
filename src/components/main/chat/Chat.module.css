@@ -59,3 +59,35 @@
     margin-right: 10px;
   }
   
+  @media (max-width: 768px) {
+    .chat-input {
+      padding: 5px;
+      box-shadow: none;
+      max-width: 80%;
+      bottom: 0;
+    }
+    
+    .chat-input input {
+      padding: 5px;
+      font-size: 12px;
+    }
+    
+    .chat-input button {
+      padding: 5px;
+      font-size: 12px;
+    }
+    
+    .chat-history {
+      padding: 5px;
+      max-width: 70%;
+    }
+    
+    .message {
+      font-size: 12px;
+    }
+    
+    .chat-header img {
+      height: 30px;
+      margin-right: 5px;
+    }
+  }
