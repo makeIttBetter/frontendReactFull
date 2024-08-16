@@ -45,3 +45,11 @@
   transition-delay: 100ms;
   transform: scale(1) rotate(360deg);
 }
+
+@media (max-width: 576px) {
+  .theme-switch .toggle {
+    background-color: var(--surface);
+    width: 40px;
+    height: 40px;
+  }
+}
